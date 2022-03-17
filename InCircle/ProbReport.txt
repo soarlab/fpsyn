@@ -1,0 +1,9 @@
+In error IA: 4571
+In error Manual: 4551
+In error FPSyn: 4551
+In error IA & FPSyn: 4451
+In error FPSyn not IA: 100
+In error IA not FPSyn: 120
+In error Manual & FPSyn: 4551
+In error FPSyn not Manual: 0
+In error Manual not FPSyn: 0

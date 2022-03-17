@@ -1,0 +1,78 @@
+
+int main(){
+int range=100;
+int sample=100000;
+REAL varlist;
+REAL res, err, merr, herr,lerr;
+FILE *fsave;
+opensave
+FILE *freport;
+openreport
+int cIA=0;
+int cFPS=0;
+int cMan=0;
+int cIAFPS=0;
+int cIAnFPS=0;
+int cFPSnIA=0;
+int cManFPS=0;
+int cMannFPS=0;
+int cFPSnMan=0;
+int bIA, bFPS, bMan;
+int i;
+for(i=0; i<sample; i++)
+{
+
+varlist=randfl(range);
+
+
+FPSynFunc;
+ManualFunc;
+IAFunc;
+
+printf("%e      %e      %e      %e      %e      %e         %f         %f\n ", res, err, merr, herr, lerr,herr-lerr, (herr-lerr)/2/err, merr/err);
+fprintf(fsave, "%e      %e      %e      %e      %e      %e         %f         %f\n ", res, err, merr, herr, lerr,herr-lerr, (herr-lerr)/2/err, merr/err);
+
+if ((0<herr)&&(0>lerr)){bIA=1;}
+else { bIA=0;}
+
+if ((res<merr)&&(res>-merr)){bMan=1;}
+else { bMan=0;}
+
+if ((res<err)&&(res>-err)){bFPS=1;}
+else { bFPS=0;}
+
+cIA = cIA + bIA;
+cFPS = cFPS+ bFPS;
+cMan= cMan + bMan;
+
+cIAFPS= cIAFPS+bIA*bFPS;
+if ((bIA==1)&&(bFPS==0)) {cIAnFPS=cIAnFPS+1;}
+if ((bIA==0)&&(bFPS==1)) {cFPSnIA=cFPSnIA+1;}
+
+cManFPS= cManFPS+bMan*bFPS;
+if ((bMan==1)&&(bFPS==0)) {cMannFPS=cMannFPS+1;}
+if ((bMan==0)&&(bFPS==1)) {cFPSnMan=cFPSnMan+1;}
+
+}
+
+fclose(fsave);
+
+printf("In error IA: %d\n", cIA);
+printf("In error FPSyn: %d\n", cFPS);
+printf("In error Manual: %d\n", cMan);
+
+fprintf(freport,"In error IA: %d\n", cIA);
+fprintf(freport,"In error Manual: %d\n", cMan);
+fprintf(freport,"In error FPSyn: %d\n", cFPS);
+
+fprintf(freport,"In error IA & FPSyn: %d\n", cIAFPS);
+fprintf(freport,"In error FPSyn not IA: %d\n", cFPSnIA);
+fprintf(freport,"In error IA not FPSyn: %d\n", cIAnFPS);
+
+fprintf(freport,"In error Manual & FPSyn: %d\n", cManFPS);
+fprintf(freport,"In error FPSyn not Manual: %d\n", cFPSnMan);
+fprintf(freport,"In error Manual not FPSyn: %d\n", cMannFPS);
+
+fclose(freport);
+
+}

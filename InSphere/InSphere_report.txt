@@ -1,0 +1,1704 @@
+Expression: 
+((az - ez)*((bx - ex)*(cy - ey) - (by - ey)*(cx - ex)) - (bz - ez)*((ax - ex)*(cy - ey) - (ay - ey)*(cx - ex)) + (cz - ez)*((ax - ex)*(by - ey) - (ay - ey)*(bx - ex)))*((dx - ex)**2 + (dy - ey)**2 + (dz - ez)**2) - ((az - ez)*((bx - ex)*(dy - ey) - (by - ey)*(dx - ex)) + (bz - ez)*(-(ax - ex)*(dy - ey) + (ay - ey)*(dx - ex)) + (dz - ez)*((ax - ex)*(by - ey) - (ay - ey)*(bx - ex)))*((cx - ex)**2 + (cy - ey)**2 + (cz - ez)**2) + ((az - ez)*((cx - ex)*(dy - ey) - (cy - ey)*(dx - ex)) + (cz - ez)*(-(ax - ex)*(dy - ey) + (ay - ey)*(dx - ex)) + (dz - ez)*((ax - ex)*(cy - ey) - (ay - ey)*(cx - ex)))*((bx - ex)**2 + (by - ey)**2 + (bz - ez)**2) - ((bz - ez)*((cx - ex)*(dy - ey) - (cy - ey)*(dx - ex)) - (cz - ez)*((bx - ex)*(dy - ey) - (by - ey)*(dx - ex)) + (dz - ez)*((bx - ex)*(cy - ey) - (by - ey)*(cx - ex)))*((ax - ex)**2 + (ay - ey)**2 + (az - ez)**2)
+
+Inter-steps:
+(t0, -ex, -ex)
+(t1, dx + t0, dx - ex)
+(t2, -ey, -ey)
+(t3, dy + t2, dy - ey)
+(t4, -ez, -ez)
+(t5, dz + t4, dz - ez)
+(t6, az + t4, az - ez)
+(t7, bx + t0, bx - ex)
+(t8, cy + t2, cy - ey)
+(t9, by + t2, by - ey)
+(t10, cx + t0, cx - ex)
+(t11, t7*t8, (bx - ex)*(cy - ey))
+(t12, t10*t9, (by - ey)*(cx - ex))
+(t13, -t12, -(by - ey)*(cx - ex))
+(t14, t11 + t13, (bx - ex)*(cy - ey) - (by - ey)*(cx - ex))
+(t15, cz + t4, cz - ez)
+(t16, ax + t0, ax - ex)
+(t17, ay + t2, ay - ey)
+(t18, t16*t9, (ax - ex)*(by - ey))
+(t19, t17*t7, (ay - ey)*(bx - ex))
+(t20, -t19, -(ay - ey)*(bx - ex))
+(t21, t18 + t20, (ax - ex)*(by - ey) - (ay - ey)*(bx - ex))
+(t22, bz + t4, bz - ez)
+(t23, t16*t8, (ax - ex)*(cy - ey))
+(t24, t10*t17, (ay - ey)*(cx - ex))
+(t25, -t24, -(ay - ey)*(cx - ex))
+(t26, t23 + t25, (ax - ex)*(cy - ey) - (ay - ey)*(cx - ex))
+(t27, t10*t3, (cx - ex)*(dy - ey))
+(t28, t1*t8, (cy - ey)*(dx - ex))
+(t29, -t28, -(cy - ey)*(dx - ex))
+(t30, t27 + t29, (cx - ex)*(dy - ey) - (cy - ey)*(dx - ex))
+(t31, t16*t3, (ax - ex)*(dy - ey))
+(t32, t1*t17, (ay - ey)*(dx - ex))
+(t33, -t32, -(ay - ey)*(dx - ex))
+(t34, t31 + t33, (ax - ex)*(dy - ey) - (ay - ey)*(dx - ex))
+(t35, t3*t7, (bx - ex)*(dy - ey))
+(t36, t1*t9, (by - ey)*(dx - ex))
+(t37, -t36, -(by - ey)*(dx - ex))
+(t38, t35 + t37, (bx - ex)*(dy - ey) - (by - ey)*(dx - ex))
+(t39, t1**2, (dx - ex)**2)
+(t40, t3**2, (dy - ey)**2)
+(t41, t5**2, (dz - ez)**2)
+(t42, t39 + t40, (dx - ex)**2 + (dy - ey)**2)
+(t43, t41 + t42, (dx - ex)**2 + (dy - ey)**2 + (dz - ez)**2)
+(t44, t14*t6, (az - ez)*((bx - ex)*(cy - ey) - (by - ey)*(cx - ex)))
+(t45, t15*t21, (cz - ez)*((ax - ex)*(by - ey) - (ay - ey)*(bx - ex)))
+(t46, t22*t26, (bz - ez)*((ax - ex)*(cy - ey) - (ay - ey)*(cx - ex)))
+(t47, -t46, -(bz - ez)*((ax - ex)*(cy - ey) - (ay - ey)*(cx - ex)))
+(t48, t44 + t45, (az - ez)*((bx - ex)*(cy - ey) - (by - ey)*(cx - ex)) + (cz - ez)*((ax - ex)*(by - ey) - (ay - ey)*(bx - ex)))
+(t49, t47 + t48, (az - ez)*((bx - ex)*(cy - ey) - (by - ey)*(cx - ex)) - (bz - ez)*((ax - ex)*(cy - ey) - (ay - ey)*(cx - ex)) + (cz - ez)*((ax - ex)*(by - ey) - (ay - ey)*(bx - ex)))
+(t50, t43*t49, ((az - ez)*((bx - ex)*(cy - ey) - (by - ey)*(cx - ex)) - (bz - ez)*((ax - ex)*(cy - ey) - (ay - ey)*(cx - ex)) + (cz - ez)*((ax - ex)*(by - ey) - (ay - ey)*(bx - ex)))*((dx - ex)**2 + (dy - ey)**2 + (dz - ez)**2))
+(t51, t22**2, (bz - ez)**2)
+(t52, t7**2, (bx - ex)**2)
+(t53, t9**2, (by - ey)**2)
+(t54, t51 + t52, (bx - ex)**2 + (bz - ez)**2)
+(t55, t53 + t54, (bx - ex)**2 + (by - ey)**2 + (bz - ez)**2)
+(t56, t26*t5, (dz - ez)*((ax - ex)*(cy - ey) - (ay - ey)*(cx - ex)))
+(t57, t30*t6, (az - ez)*((cx - ex)*(dy - ey) - (cy - ey)*(dx - ex)))
+(t58, t15*t34, (cz - ez)*((ax - ex)*(dy - ey) - (ay - ey)*(dx - ex)))
+(t59, -t58, -(cz - ez)*((ax - ex)*(dy - ey) - (ay - ey)*(dx - ex)))
+(t60, t56 + t57, (az - ez)*((cx - ex)*(dy - ey) - (cy - ey)*(dx - ex)) + (dz - ez)*((ax - ex)*(cy - ey) - (ay - ey)*(cx - ex)))
+(t61, t59 + t60, (az - ez)*((cx - ex)*(dy - ey) - (cy - ey)*(dx - ex)) - (cz - ez)*((ax - ex)*(dy - ey) - (ay - ey)*(dx - ex)) + (dz - ez)*((ax - ex)*(cy - ey) - (ay - ey)*(cx - ex)))
+(t62, t55*t61, ((az - ez)*((cx - ex)*(dy - ey) - (cy - ey)*(dx - ex)) - (cz - ez)*((ax - ex)*(dy - ey) - (ay - ey)*(dx - ex)) + (dz - ez)*((ax - ex)*(cy - ey) - (ay - ey)*(cx - ex)))*((bx - ex)**2 + (by - ey)**2 + (bz - ez)**2))
+(t63, t10**2, (cx - ex)**2)
+(t64, t15**2, (cz - ez)**2)
+(t65, t8**2, (cy - ey)**2)
+(t66, t63 + t64, (cx - ex)**2 + (cz - ez)**2)
+(t67, t65 + t66, (cx - ex)**2 + (cy - ey)**2 + (cz - ez)**2)
+(t68, t21*t5, (dz - ez)*((ax - ex)*(by - ey) - (ay - ey)*(bx - ex)))
+(t69, t38*t6, (az - ez)*((bx - ex)*(dy - ey) - (by - ey)*(dx - ex)))
+(t70, t22*t34, (bz - ez)*((ax - ex)*(dy - ey) - (ay - ey)*(dx - ex)))
+(t71, -t70, -(bz - ez)*((ax - ex)*(dy - ey) - (ay - ey)*(dx - ex)))
+(t72, t68 + t69, (az - ez)*((bx - ex)*(dy - ey) - (by - ey)*(dx - ex)) + (dz - ez)*((ax - ex)*(by - ey) - (ay - ey)*(bx - ex)))
+(t73, t71 + t72, (az - ez)*((bx - ex)*(dy - ey) - (by - ey)*(dx - ex)) - (bz - ez)*((ax - ex)*(dy - ey) - (ay - ey)*(dx - ex)) + (dz - ez)*((ax - ex)*(by - ey) - (ay - ey)*(bx - ex)))
+(t74, t67*t73, ((az - ez)*((bx - ex)*(dy - ey) - (by - ey)*(dx - ex)) - (bz - ez)*((ax - ex)*(dy - ey) - (ay - ey)*(dx - ex)) + (dz - ez)*((ax - ex)*(by - ey) - (ay - ey)*(bx - ex)))*((cx - ex)**2 + (cy - ey)**2 + (cz - ez)**2))
+(t75, -t74, -((az - ez)*((bx - ex)*(dy - ey) - (by - ey)*(dx - ex)) - (bz - ez)*((ax - ex)*(dy - ey) - (ay - ey)*(dx - ex)) + (dz - ez)*((ax - ex)*(by - ey) - (ay - ey)*(bx - ex)))*((cx - ex)**2 + (cy - ey)**2 + (cz - ez)**2))
+(t76, t16**2, (ax - ex)**2)
+(t77, t17**2, (ay - ey)**2)
+(t78, t6**2, (az - ez)**2)
+(t79, t76 + t77, (ax - ex)**2 + (ay - ey)**2)
+(t80, t78 + t79, (ax - ex)**2 + (ay - ey)**2 + (az - ez)**2)
+(t81, t14*t5, (dz - ez)*((bx - ex)*(cy - ey) - (by - ey)*(cx - ex)))
+(t82, t22*t30, (bz - ez)*((cx - ex)*(dy - ey) - (cy - ey)*(dx - ex)))
+(t83, t15*t38, (cz - ez)*((bx - ex)*(dy - ey) - (by - ey)*(dx - ex)))
+(t84, -t83, -(cz - ez)*((bx - ex)*(dy - ey) - (by - ey)*(dx - ex)))
+(t85, t81 + t82, (bz - ez)*((cx - ex)*(dy - ey) - (cy - ey)*(dx - ex)) + (dz - ez)*((bx - ex)*(cy - ey) - (by - ey)*(cx - ex)))
+(t86, t84 + t85, (bz - ez)*((cx - ex)*(dy - ey) - (cy - ey)*(dx - ex)) - (cz - ez)*((bx - ex)*(dy - ey) - (by - ey)*(dx - ex)) + (dz - ez)*((bx - ex)*(cy - ey) - (by - ey)*(cx - ex)))
+(t87, t80*t86, ((bz - ez)*((cx - ex)*(dy - ey) - (cy - ey)*(dx - ex)) - (cz - ez)*((bx - ex)*(dy - ey) - (by - ey)*(dx - ex)) + (dz - ez)*((bx - ex)*(cy - ey) - (by - ey)*(cx - ex)))*((ax - ex)**2 + (ay - ey)**2 + (az - ez)**2))
+(t88, -t87, -((bz - ez)*((cx - ex)*(dy - ey) - (cy - ey)*(dx - ex)) - (cz - ez)*((bx - ex)*(dy - ey) - (by - ey)*(dx - ex)) + (dz - ez)*((bx - ex)*(cy - ey) - (by - ey)*(cx - ex)))*((ax - ex)**2 + (ay - ey)**2 + (az - ez)**2))
+(t89, t50 + t62, ((az - ez)*((bx - ex)*(cy - ey) - (by - ey)*(cx - ex)) - (bz - ez)*((ax - ex)*(cy - ey) - (ay - ey)*(cx - ex)) + (cz - ez)*((ax - ex)*(by - ey) - (ay - ey)*(bx - ex)))*((dx - ex)**2 + (dy - ey)**2 + (dz - ez)**2) + ((az - ez)*((cx - ex)*(dy - ey) - (cy - ey)*(dx - ex)) - (cz - ez)*((ax - ex)*(dy - ey) - (ay - ey)*(dx - ex)) + (dz - ez)*((ax - ex)*(cy - ey) - (ay - ey)*(cx - ex)))*((bx - ex)**2 + (by - ey)**2 + (bz - ez)**2))
+(t90, t75 + t89, ((az - ez)*((bx - ex)*(cy - ey) - (by - ey)*(cx - ex)) - (bz - ez)*((ax - ex)*(cy - ey) - (ay - ey)*(cx - ex)) + (cz - ez)*((ax - ex)*(by - ey) - (ay - ey)*(bx - ex)))*((dx - ex)**2 + (dy - ey)**2 + (dz - ez)**2) - ((az - ez)*((bx - ex)*(dy - ey) - (by - ey)*(dx - ex)) - (bz - ez)*((ax - ex)*(dy - ey) - (ay - ey)*(dx - ex)) + (dz - ez)*((ax - ex)*(by - ey) - (ay - ey)*(bx - ex)))*((cx - ex)**2 + (cy - ey)**2 + (cz - ez)**2) + ((az - ez)*((cx - ex)*(dy - ey) - (cy - ey)*(dx - ex)) - (cz - ez)*((ax - ex)*(dy - ey) - (ay - ey)*(dx - ex)) + (dz - ez)*((ax - ex)*(cy - ey) - (ay - ey)*(cx - ex)))*((bx - ex)**2 + (by - ey)**2 + (bz - ez)**2))
+(t91, t88 + t90, ((az - ez)*((bx - ex)*(cy - ey) - (by - ey)*(cx - ex)) - (bz - ez)*((ax - ex)*(cy - ey) - (ay - ey)*(cx - ex)) + (cz - ez)*((ax - ex)*(by - ey) - (ay - ey)*(bx - ex)))*((dx - ex)**2 + (dy - ey)**2 + (dz - ez)**2) - ((az - ez)*((bx - ex)*(dy - ey) - (by - ey)*(dx - ex)) - (bz - ez)*((ax - ex)*(dy - ey) - (ay - ey)*(dx - ex)) + (dz - ez)*((ax - ex)*(by - ey) - (ay - ey)*(bx - ex)))*((cx - ex)**2 + (cy - ey)**2 + (cz - ez)**2) + ((az - ez)*((cx - ex)*(dy - ey) - (cy - ey)*(dx - ex)) - (cz - ez)*((ax - ex)*(dy - ey) - (ay - ey)*(dx - ex)) + (dz - ez)*((ax - ex)*(cy - ey) - (ay - ey)*(cx - ex)))*((bx - ex)**2 + (by - ey)**2 + (bz - ez)**2) - ((bz - ez)*((cx - ex)*(dy - ey) - (cy - ey)*(dx - ex)) - (cz - ez)*((bx - ex)*(dy - ey) - (by - ey)*(dx - ex)) + (dz - ez)*((bx - ex)*(cy - ey) - (by - ey)*(cx - ex)))*((ax - ex)**2 + (ay - ey)**2 + (az - ez)**2))
+
+Multiplication substitutions:
+t7*t8 -> 1.0*t11
+t10*t9 -> 1.0*t12
+t16*t9 -> 1.0*t18
+t17*t7 -> 1.0*t19
+t16*t8 -> 1.0*t23
+t10*t17 -> 1.0*t24
+t10*t3 -> 1.0*t27
+t1*t8 -> 1.0*t28
+t16*t3 -> 1.0*t31
+t1*t17 -> 1.0*t32
+t3*t7 -> 1.0*t35
+t1*t9 -> 1.0*t36
+t1**2 -> 1.0*t39
+t3**2 -> 1.0*t40
+t5**2 -> 1.0*t41
+t14*t6 -> 1.0*t44
+t15*t21 -> 1.0*t45
+t22*t26 -> 1.0*t46
+t43*t49 -> 1.0*t50
+t22**2 -> 1.0*t51
+t7**2 -> 1.0*t52
+t9**2 -> 1.0*t53
+t26*t5 -> 1.0*t56
+t30*t6 -> 1.0*t57
+t15*t34 -> 1.0*t58
+t55*t61 -> 1.0*t62
+t10**2 -> 1.0*t63
+t15**2 -> 1.0*t64
+t8**2 -> 1.0*t65
+t21*t5 -> 1.0*t68
+t38*t6 -> 1.0*t69
+t22*t34 -> 1.0*t70
+t67*t73 -> 1.0*t74
+t16**2 -> 1.0*t76
+t17**2 -> 1.0*t77
+t6**2 -> 1.0*t78
+t14*t5 -> 1.0*t81
+t22*t30 -> 1.0*t82
+t15*t38 -> 1.0*t83
+t80*t86 -> 1.0*t87
+
+Addition substitutions:
+t1 -> 1.0*dx + 1.0*t0
+t1 -> 1.0*dx + 1.0*ex
+t3 -> 1.0*dy + 1.0*t2
+t3 -> 1.0*dy + 1.0*ey
+t5 -> 1.0*dz + 1.0*t4
+t5 -> 1.0*dz + 1.0*ez
+t6 -> 1.0*az + 1.0*t4
+t6 -> 1.0*az + 1.0*ez
+t7 -> 1.0*bx + 1.0*t0
+t7 -> 1.0*bx + 1.0*ex
+t8 -> 1.0*cy + 1.0*t2
+t8 -> 1.0*cy + 1.0*ey
+t9 -> 1.0*by + 1.0*t2
+t9 -> 1.0*by + 1.0*ey
+t10 -> 1.0*cx + 1.0*t0
+t10 -> 1.0*cx + 1.0*ex
+t14 -> 1.0*t11 + 1.0*t13
+t14 -> 1.0*t11 + 1.0*t12
+t15 -> 1.0*cz + 1.0*t4
+t15 -> 1.0*cz + 1.0*ez
+t16 -> 1.0*ax + 1.0*t0
+t16 -> 1.0*ax + 1.0*ex
+t17 -> 1.0*ay + 1.0*t2
+t17 -> 1.0*ay + 1.0*ey
+t21 -> 1.0*t18 + 1.0*t20
+t21 -> 1.0*t18 + 1.0*t19
+t22 -> 1.0*bz + 1.0*t4
+t22 -> 1.0*bz + 1.0*ez
+t26 -> 1.0*t23 + 1.0*t25
+t26 -> 1.0*t23 + 1.0*t24
+t30 -> 1.0*t27 + 1.0*t29
+t30 -> 1.0*t27 + 1.0*t28
+t34 -> 1.0*t31 + 1.0*t33
+t34 -> 1.0*t31 + 1.0*t32
+t38 -> 1.0*t35 + 1.0*t37
+t38 -> 1.0*t35 + 1.0*t36
+t42 -> 1.0*t39 + 1.0*t40
+t39 -> -t40 + 1.0*t42
+t43 -> 1.0*t41 + 1.0*t42
+t41 -> -t42 + 1.0*t43
+t48 -> 1.0*t44 + 1.0*t45
+t49 -> 1.0*t47 + 1.0*t48
+t49 -> 1.0*t46 + 1.0*t48
+t54 -> 1.0*t51 + 1.0*t52
+t51 -> -t52 + 1.0*t54
+t55 -> 1.0*t53 + 1.0*t54
+t53 -> -t54 + 1.0*t55
+t60 -> 1.0*t56 + 1.0*t57
+t61 -> 1.0*t59 + 1.0*t60
+t61 -> 1.0*t58 + 1.0*t60
+t66 -> 1.0*t63 + 1.0*t64
+t63 -> -t64 + 1.0*t66
+t67 -> 1.0*t65 + 1.0*t66
+t65 -> -t66 + 1.0*t67
+t72 -> 1.0*t68 + 1.0*t69
+t73 -> 1.0*t71 + 1.0*t72
+t73 -> 1.0*t70 + 1.0*t72
+t79 -> 1.0*t76 + 1.0*t77
+t76 -> -t77 + 1.0*t79
+t80 -> 1.0*t78 + 1.0*t79
+t78 -> -t79 + 1.0*t80
+t85 -> 1.0*t81 + 1.0*t82
+t86 -> 1.0*t84 + 1.0*t85
+t86 -> 1.0*t83 + 1.0*t85
+t89 -> 1.0*t50 + 1.0*t62
+t90 -> 1.0*t75 + 1.0*t89
+t90 -> 1.0*t74 + 1.0*t89
+t91 -> 1.0*t88 + 1.0*t90
+t91 -> 1.0*t87 + 1.0*t90
+
+Reverse substitutions:
+t0 -> -1.0*ex
+t0 -> -1.0*t0
+t2 -> -1.0*ey
+t2 -> -1.0*t2
+t4 -> -1.0*ez
+t4 -> -1.0*t4
+t11 -> 1.0*t7*t8
+t12 -> 1.0*t10*t9
+t13 -> -1.0*t12
+t13 -> -1.0*t13
+t18 -> 1.0*t16*t9
+t19 -> 1.0*t17*t7
+t20 -> -1.0*t19
+t20 -> -1.0*t20
+t23 -> 1.0*t16*t8
+t24 -> 1.0*t10*t17
+t25 -> -1.0*t24
+t25 -> -1.0*t25
+t27 -> 1.0*t10*t3
+t28 -> 1.0*t1*t8
+t29 -> -1.0*t28
+t29 -> -1.0*t29
+t31 -> 1.0*t16*t3
+t32 -> 1.0*t1*t17
+t33 -> -1.0*t32
+t33 -> -1.0*t33
+t35 -> 1.0*t3*t7
+t36 -> 1.0*t1*t9
+t37 -> -1.0*t36
+t37 -> -1.0*t37
+t39 -> 1.0*t1**2
+t40 -> 1.0*t3**2
+t41 -> 1.0*t5**2
+t42 -> 1.0*t39 + 1.0*t40
+t43 -> 1.0*t41 + 1.0*t42
+t44 -> 1.0*t14*t6
+t45 -> 1.0*t15*t21
+t46 -> 1.0*t22*t26
+t47 -> -1.0*t46
+t47 -> -1.0*t47
+t50 -> 1.0*t43*t49
+t51 -> 1.0*t22**2
+t52 -> 1.0*t7**2
+t53 -> 1.0*t9**2
+t54 -> 1.0*t51 + 1.0*t52
+t55 -> 1.0*t53 + 1.0*t54
+t56 -> 1.0*t26*t5
+t57 -> 1.0*t30*t6
+t58 -> 1.0*t15*t34
+t59 -> -1.0*t58
+t59 -> -1.0*t59
+t62 -> 1.0*t55*t61
+t63 -> 1.0*t10**2
+t64 -> 1.0*t15**2
+t65 -> 1.0*t8**2
+t66 -> 1.0*t63 + 1.0*t64
+t67 -> 1.0*t65 + 1.0*t66
+t68 -> 1.0*t21*t5
+t69 -> 1.0*t38*t6
+t70 -> 1.0*t22*t34
+t71 -> -1.0*t70
+t71 -> -1.0*t71
+t74 -> 1.0*t67*t73
+t75 -> -1.0*t74
+t75 -> -1.0*t75
+t76 -> 1.0*t16**2
+t77 -> 1.0*t17**2
+t78 -> 1.0*t6**2
+t79 -> 1.0*t76 + 1.0*t77
+t80 -> 1.0*t78 + 1.0*t79
+t81 -> 1.0*t14*t5
+t82 -> 1.0*t22*t30
+t83 -> 1.0*t15*t38
+t84 -> -1.0*t83
+t84 -> -1.0*t84
+t87 -> 1.0*t80*t86
+t88 -> -1.0*t87
+t88 -> -1.0*t88
+
+Error-list:
+Inter step: t0 = -ex   # Operations:0
+Before 1st subs exp: 
+0
+After 1st subs exp: 
+0
+After adjust coeff exp: 
+0
+After 2nd subs exp: 
+0
+
+Inter step: t1 = dx + t0   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t1
+After 1st subs exp: 
+1.11022302462516e-16*t1
+After adjust coeff exp: 
+1.11022302462516e-16*t1
+After 2nd subs exp: 
+1.11022302462516e-16*t1
+
+Inter step: t2 = -ey   # Operations:0
+Before 1st subs exp: 
+0
+After 1st subs exp: 
+0
+After adjust coeff exp: 
+0
+After 2nd subs exp: 
+0
+
+Inter step: t3 = dy + t2   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t3
+After 1st subs exp: 
+1.11022302462516e-16*t3
+After adjust coeff exp: 
+1.11022302462516e-16*t3
+After 2nd subs exp: 
+1.11022302462516e-16*t3
+
+Inter step: t4 = -ez   # Operations:0
+Before 1st subs exp: 
+0
+After 1st subs exp: 
+0
+After adjust coeff exp: 
+0
+After 2nd subs exp: 
+0
+
+Inter step: t5 = dz + t4   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t5
+After 1st subs exp: 
+1.11022302462516e-16*t5
+After adjust coeff exp: 
+1.11022302462516e-16*t5
+After 2nd subs exp: 
+1.11022302462516e-16*t5
+
+Inter step: t6 = az + t4   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t6
+After 1st subs exp: 
+1.11022302462516e-16*t6
+After adjust coeff exp: 
+1.11022302462516e-16*t6
+After 2nd subs exp: 
+1.11022302462516e-16*t6
+
+Inter step: t7 = bx + t0   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t7
+After 1st subs exp: 
+1.11022302462516e-16*t7
+After adjust coeff exp: 
+1.11022302462516e-16*t7
+After 2nd subs exp: 
+1.11022302462516e-16*t7
+
+Inter step: t8 = cy + t2   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t8
+After 1st subs exp: 
+1.11022302462516e-16*t8
+After adjust coeff exp: 
+1.11022302462516e-16*t8
+After 2nd subs exp: 
+1.11022302462516e-16*t8
+
+Inter step: t9 = by + t2   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t9
+After 1st subs exp: 
+1.11022302462516e-16*t9
+After adjust coeff exp: 
+1.11022302462516e-16*t9
+After 2nd subs exp: 
+1.11022302462516e-16*t9
+
+Inter step: t10 = cx + t0   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t10
+After 1st subs exp: 
+1.11022302462516e-16*t10
+After adjust coeff exp: 
+1.11022302462516e-16*t10
+After 2nd subs exp: 
+1.11022302462516e-16*t10
+
+Inter step: t11 = t7*t8   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t11 + 2.22044604925031e-16*t7*t8
+After 1st subs exp: 
+3.33066907387547e-16*t11
+After adjust coeff exp: 
+3.33066907387547e-16*t11
+After 2nd subs exp: 
+3.33066907387547e-16*t11
+
+Inter step: t12 = t10*t9   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t10*t9 + 1.11022302462516e-16*t12
+After 1st subs exp: 
+3.33066907387547e-16*t12
+After adjust coeff exp: 
+3.33066907387547e-16*t12
+After 2nd subs exp: 
+3.33066907387547e-16*t12
+
+Inter step: t13 = -t12   # Operations:1
+Before 1st subs exp: 
+3.33066907387547e-16*t12
+After 1st subs exp: 
+3.33066907387547e-16*t12
+After adjust coeff exp: 
+3.33066907387547e-16*t12
+After 2nd subs exp: 
+3.33066907387547e-16*t12
+
+Inter step: t14 = t11 + t13   # Operations:2
+Before 1st subs exp: 
+3.33066907387547e-16*t11 + 3.33066907387547e-16*t12 + 1.11022302462516e-16*t14
+After 1st subs exp: 
+4.44089209850063e-16*t11 + 4.44089209850063e-16*t12
+After adjust coeff exp: 
+4.44089209850063e-16*t11 + 4.44089209850063e-16*t12
+After 2nd subs exp: 
+4.44089209850063e-16*t11 + 4.44089209850063e-16*t12
+
+Inter step: t15 = cz + t4   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t15
+After 1st subs exp: 
+1.11022302462516e-16*t15
+After adjust coeff exp: 
+1.11022302462516e-16*t15
+After 2nd subs exp: 
+1.11022302462516e-16*t15
+
+Inter step: t16 = ax + t0   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t16
+After 1st subs exp: 
+1.11022302462516e-16*t16
+After adjust coeff exp: 
+1.11022302462516e-16*t16
+After 2nd subs exp: 
+1.11022302462516e-16*t16
+
+Inter step: t17 = ay + t2   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t17
+After 1st subs exp: 
+1.11022302462516e-16*t17
+After adjust coeff exp: 
+1.11022302462516e-16*t17
+After 2nd subs exp: 
+1.11022302462516e-16*t17
+
+Inter step: t18 = t16*t9   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t16*t9 + 1.11022302462516e-16*t18
+After 1st subs exp: 
+3.33066907387547e-16*t18
+After adjust coeff exp: 
+3.33066907387547e-16*t18
+After 2nd subs exp: 
+3.33066907387547e-16*t18
+
+Inter step: t19 = t17*t7   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t17*t7 + 1.11022302462516e-16*t19
+After 1st subs exp: 
+3.33066907387547e-16*t19
+After adjust coeff exp: 
+3.33066907387547e-16*t19
+After 2nd subs exp: 
+3.33066907387547e-16*t19
+
+Inter step: t20 = -t19   # Operations:1
+Before 1st subs exp: 
+3.33066907387547e-16*t19
+After 1st subs exp: 
+3.33066907387547e-16*t19
+After adjust coeff exp: 
+3.33066907387547e-16*t19
+After 2nd subs exp: 
+3.33066907387547e-16*t19
+
+Inter step: t21 = t18 + t20   # Operations:2
+Before 1st subs exp: 
+3.33066907387547e-16*t18 + 3.33066907387547e-16*t19 + 1.11022302462516e-16*t21
+After 1st subs exp: 
+4.44089209850063e-16*t18 + 4.44089209850063e-16*t19
+After adjust coeff exp: 
+4.44089209850063e-16*t18 + 4.44089209850063e-16*t19
+After 2nd subs exp: 
+4.44089209850063e-16*t18 + 4.44089209850063e-16*t19
+
+Inter step: t22 = bz + t4   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t22
+After 1st subs exp: 
+1.11022302462516e-16*t22
+After adjust coeff exp: 
+1.11022302462516e-16*t22
+After 2nd subs exp: 
+1.11022302462516e-16*t22
+
+Inter step: t23 = t16*t8   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t16*t8 + 1.11022302462516e-16*t23
+After 1st subs exp: 
+3.33066907387547e-16*t23
+After adjust coeff exp: 
+3.33066907387547e-16*t23
+After 2nd subs exp: 
+3.33066907387547e-16*t23
+
+Inter step: t24 = t10*t17   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t10*t17 + 1.11022302462516e-16*t24
+After 1st subs exp: 
+3.33066907387547e-16*t24
+After adjust coeff exp: 
+3.33066907387547e-16*t24
+After 2nd subs exp: 
+3.33066907387547e-16*t24
+
+Inter step: t25 = -t24   # Operations:1
+Before 1st subs exp: 
+3.33066907387547e-16*t24
+After 1st subs exp: 
+3.33066907387547e-16*t24
+After adjust coeff exp: 
+3.33066907387547e-16*t24
+After 2nd subs exp: 
+3.33066907387547e-16*t24
+
+Inter step: t26 = t23 + t25   # Operations:2
+Before 1st subs exp: 
+3.33066907387547e-16*t23 + 3.33066907387547e-16*t24 + 1.11022302462516e-16*t26
+After 1st subs exp: 
+4.44089209850063e-16*t23 + 4.44089209850063e-16*t24
+After adjust coeff exp: 
+4.44089209850063e-16*t23 + 4.44089209850063e-16*t24
+After 2nd subs exp: 
+4.44089209850063e-16*t23 + 4.44089209850063e-16*t24
+
+Inter step: t27 = t10*t3   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t10*t3 + 1.11022302462516e-16*t27
+After 1st subs exp: 
+3.33066907387547e-16*t27
+After adjust coeff exp: 
+3.33066907387547e-16*t27
+After 2nd subs exp: 
+3.33066907387547e-16*t27
+
+Inter step: t28 = t1*t8   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t1*t8 + 1.11022302462516e-16*t28
+After 1st subs exp: 
+3.33066907387547e-16*t28
+After adjust coeff exp: 
+3.33066907387547e-16*t28
+After 2nd subs exp: 
+3.33066907387547e-16*t28
+
+Inter step: t29 = -t28   # Operations:1
+Before 1st subs exp: 
+3.33066907387547e-16*t28
+After 1st subs exp: 
+3.33066907387547e-16*t28
+After adjust coeff exp: 
+3.33066907387547e-16*t28
+After 2nd subs exp: 
+3.33066907387547e-16*t28
+
+Inter step: t30 = t27 + t29   # Operations:2
+Before 1st subs exp: 
+3.33066907387547e-16*t27 + 3.33066907387547e-16*t28 + 1.11022302462516e-16*t30
+After 1st subs exp: 
+4.44089209850063e-16*t27 + 4.44089209850063e-16*t28
+After adjust coeff exp: 
+4.44089209850063e-16*t27 + 4.44089209850063e-16*t28
+After 2nd subs exp: 
+4.44089209850063e-16*t27 + 4.44089209850063e-16*t28
+
+Inter step: t31 = t16*t3   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t16*t3 + 1.11022302462516e-16*t31
+After 1st subs exp: 
+3.33066907387547e-16*t31
+After adjust coeff exp: 
+3.33066907387547e-16*t31
+After 2nd subs exp: 
+3.33066907387547e-16*t31
+
+Inter step: t32 = t1*t17   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t1*t17 + 1.11022302462516e-16*t32
+After 1st subs exp: 
+3.33066907387547e-16*t32
+After adjust coeff exp: 
+3.33066907387547e-16*t32
+After 2nd subs exp: 
+3.33066907387547e-16*t32
+
+Inter step: t33 = -t32   # Operations:1
+Before 1st subs exp: 
+3.33066907387547e-16*t32
+After 1st subs exp: 
+3.33066907387547e-16*t32
+After adjust coeff exp: 
+3.33066907387547e-16*t32
+After 2nd subs exp: 
+3.33066907387547e-16*t32
+
+Inter step: t34 = t31 + t33   # Operations:2
+Before 1st subs exp: 
+3.33066907387547e-16*t31 + 3.33066907387547e-16*t32 + 1.11022302462516e-16*t34
+After 1st subs exp: 
+4.44089209850063e-16*t31 + 4.44089209850063e-16*t32
+After adjust coeff exp: 
+4.44089209850063e-16*t31 + 4.44089209850063e-16*t32
+After 2nd subs exp: 
+4.44089209850063e-16*t31 + 4.44089209850063e-16*t32
+
+Inter step: t35 = t3*t7   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t3*t7 + 1.11022302462516e-16*t35
+After 1st subs exp: 
+3.33066907387547e-16*t35
+After adjust coeff exp: 
+3.33066907387547e-16*t35
+After 2nd subs exp: 
+3.33066907387547e-16*t35
+
+Inter step: t36 = t1*t9   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t1*t9 + 1.11022302462516e-16*t36
+After 1st subs exp: 
+3.33066907387547e-16*t36
+After adjust coeff exp: 
+3.33066907387547e-16*t36
+After 2nd subs exp: 
+3.33066907387547e-16*t36
+
+Inter step: t37 = -t36   # Operations:1
+Before 1st subs exp: 
+3.33066907387547e-16*t36
+After 1st subs exp: 
+3.33066907387547e-16*t36
+After adjust coeff exp: 
+3.33066907387547e-16*t36
+After 2nd subs exp: 
+3.33066907387547e-16*t36
+
+Inter step: t38 = t35 + t37   # Operations:2
+Before 1st subs exp: 
+3.33066907387547e-16*t35 + 3.33066907387547e-16*t36 + 1.11022302462516e-16*t38
+After 1st subs exp: 
+4.44089209850063e-16*t35 + 4.44089209850063e-16*t36
+After adjust coeff exp: 
+4.44089209850063e-16*t35 + 4.44089209850063e-16*t36
+After 2nd subs exp: 
+4.44089209850063e-16*t35 + 4.44089209850063e-16*t36
+
+Inter step: t39 = t1**2   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t1**2 + 1.11022302462516e-16*t39
+After 1st subs exp: 
+3.33066907387547e-16*t39
+After adjust coeff exp: 
+3.33066907387547e-16*t39
+After 2nd subs exp: 
+3.33066907387547e-16*t39
+
+Inter step: t40 = t3**2   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t3**2 + 1.11022302462516e-16*t40
+After 1st subs exp: 
+3.33066907387547e-16*t40
+After adjust coeff exp: 
+3.33066907387547e-16*t40
+After 2nd subs exp: 
+3.33066907387547e-16*t40
+
+Inter step: t41 = t5**2   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t41 + 2.22044604925031e-16*t5**2
+After 1st subs exp: 
+3.33066907387547e-16*t41
+After adjust coeff exp: 
+3.33066907387547e-16*t41
+After 2nd subs exp: 
+3.33066907387547e-16*t41
+
+Inter step: t42 = t39 + t40   # Operations:1
+Before 1st subs exp: 
+3.33066907387547e-16*t39 + 3.33066907387547e-16*t40 + 1.11022302462516e-16*t42
+After 1st subs exp: 
+4.44089209850063e-16*t42
+After adjust coeff exp: 
+4.44089209850063e-16*t42
+After 2nd subs exp: 
+4.44089209850063e-16*t42
+
+Inter step: t43 = t41 + t42   # Operations:1
+Before 1st subs exp: 
+3.33066907387547e-16*t41 + 4.44089209850063e-16*t42 + 1.11022302462516e-16*t43
+After 1st subs exp: 
+4.44089209850063e-16*t41 + 5.55111512312578e-16*t42
+After adjust coeff exp: 
+5.55111512312578e-16*t41 + 5.55111512312578e-16*t42
+After 2nd subs exp: 
+5.55111512312579e-16*t43
+
+Inter step: t44 = t14*t6   # Operations:5
+Before 1st subs exp: 
+1.11022302462516e-16*t14*t6 + 1.11022302462516e-16*t44 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)
+After 1st subs exp: 
+2.22044604925031e-16*t44 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)
+After adjust coeff exp: 
+4.44089209850063e-16*t44 + 4.44089209850063e-16*t6*(t11 + t12)
+After 2nd subs exp: 
+2.22044604925031e-16*t44 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)
+
+Inter step: t45 = t15*t21   # Operations:5
+Before 1st subs exp: 
+1.11022302462516e-16*t15*t21 + 1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.11022302462516e-16*t45
+After 1st subs exp: 
+1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 2.22044604925031e-16*t45
+After adjust coeff exp: 
+4.44089209850063e-16*t15*(t18 + t19) + 4.44089209850063e-16*t45
+After 2nd subs exp: 
+1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 2.22044604925031e-16*t45
+
+Inter step: t46 = t22*t26   # Operations:5
+Before 1st subs exp: 
+1.11022302462516e-16*t22*t26 + 1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 1.11022302462516e-16*t46
+After 1st subs exp: 
+1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 2.22044604925031e-16*t46
+After adjust coeff exp: 
+4.44089209850063e-16*t22*(t23 + t24) + 4.44089209850063e-16*t46
+After 2nd subs exp: 
+1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 2.22044604925031e-16*t46
+
+Inter step: t47 = -t46   # Operations:5
+Before 1st subs exp: 
+1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 2.22044604925031e-16*t46
+After 1st subs exp: 
+1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 2.22044604925031e-16*t46
+After adjust coeff exp: 
+4.44089209850063e-16*t22*(t23 + t24) + 4.44089209850063e-16*t46
+After 2nd subs exp: 
+1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 2.22044604925031e-16*t46
+
+Inter step: t48 = t44 + t45   # Operations:11
+Before 1st subs exp: 
+1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 2.22044604925031e-16*t44 + 2.22044604925031e-16*t45 + 1.11022302462516e-16*t48 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)
+After 1st subs exp: 
+1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)
+After adjust coeff exp: 
+4.44089209850063e-16*t15*(t18 + t19) + 4.44089209850063e-16*t44 + 4.44089209850063e-16*t45 + 4.44089209850063e-16*t6*(t11 + t12)
+After 2nd subs exp: 
+1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)
+
+Inter step: t49 = t47 + t48   # Operations:19
+Before 1st subs exp: 
+1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 2.22044604925031e-16*t46 + 1.11022302462516e-16*t49 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)
+After 1st subs exp: 
+1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 2.22044604925031e-16*t46 + 1.11022302462516e-16*t49 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)
+After adjust coeff exp: 
+4.44089209850063e-16*t15*(t18 + t19) + 4.44089209850063e-16*t22*(t23 + t24) + 4.44089209850063e-16*t44 + 4.44089209850063e-16*t45 + 4.44089209850063e-16*t46 + 4.44089209850063e-16*t49 + 4.44089209850063e-16*t6*(t11 + t12)
+After 2nd subs exp: 
+1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 2.22044604925031e-16*t46 + 1.11022302462516e-16*t49 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)
+
+Inter step: t50 = t43*t49   # Operations:23
+Before 1st subs exp: 
+5.55111512312579e-16*t43*t49 + 1.0*t43*(1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 2.22044604925031e-16*t46 + 1.11022302462516e-16*t49 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)) + 1.11022302462516e-16*t50
+After 1st subs exp: 
+1.0*t43*(1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 2.22044604925031e-16*t46 + 1.11022302462516e-16*t49 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)) + 6.66133814775094e-16*t50
+After adjust coeff exp: 
+4.44089209850063e-16*t43*(t15*(t18 + t19) + t22*(t23 + t24) + t44 + t45 + t46 + t49 + t6*(t11 + t12)) + 6.66133814775094e-16*t50
+After 2nd subs exp: 
+1.0*t43*(1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 2.22044604925031e-16*t46 + 1.11022302462516e-16*t49 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)) + 6.66133814775094e-16*t50
+
+Inter step: t51 = t22**2   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t22**2 + 1.11022302462516e-16*t51
+After 1st subs exp: 
+3.33066907387547e-16*t51
+After adjust coeff exp: 
+3.33066907387547e-16*t51
+After 2nd subs exp: 
+3.33066907387547e-16*t51
+
+Inter step: t52 = t7**2   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t52 + 2.22044604925031e-16*t7**2
+After 1st subs exp: 
+3.33066907387547e-16*t52
+After adjust coeff exp: 
+3.33066907387547e-16*t52
+After 2nd subs exp: 
+3.33066907387547e-16*t52
+
+Inter step: t53 = t9**2   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t53 + 2.22044604925031e-16*t9**2
+After 1st subs exp: 
+3.33066907387547e-16*t53
+After adjust coeff exp: 
+3.33066907387547e-16*t53
+After 2nd subs exp: 
+3.33066907387547e-16*t53
+
+Inter step: t54 = t51 + t52   # Operations:1
+Before 1st subs exp: 
+3.33066907387547e-16*t51 + 3.33066907387547e-16*t52 + 1.11022302462516e-16*t54
+After 1st subs exp: 
+4.44089209850063e-16*t54
+After adjust coeff exp: 
+4.44089209850063e-16*t54
+After 2nd subs exp: 
+4.44089209850063e-16*t54
+
+Inter step: t55 = t53 + t54   # Operations:1
+Before 1st subs exp: 
+3.33066907387547e-16*t53 + 4.44089209850063e-16*t54 + 1.11022302462516e-16*t55
+After 1st subs exp: 
+4.44089209850063e-16*t53 + 5.55111512312578e-16*t54
+After adjust coeff exp: 
+5.55111512312578e-16*t53 + 5.55111512312578e-16*t54
+After 2nd subs exp: 
+5.55111512312579e-16*t55
+
+Inter step: t56 = t26*t5   # Operations:5
+Before 1st subs exp: 
+1.11022302462516e-16*t26*t5 + 1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 1.11022302462516e-16*t56
+After 1st subs exp: 
+1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 2.22044604925031e-16*t56
+After adjust coeff exp: 
+4.44089209850063e-16*t5*(t23 + t24) + 4.44089209850063e-16*t56
+After 2nd subs exp: 
+1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 2.22044604925031e-16*t56
+
+Inter step: t57 = t30*t6   # Operations:5
+Before 1st subs exp: 
+1.11022302462516e-16*t30*t6 + 1.11022302462516e-16*t57 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28)
+After 1st subs exp: 
+2.22044604925031e-16*t57 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28)
+After adjust coeff exp: 
+4.44089209850063e-16*t57 + 4.44089209850063e-16*t6*(t27 + t28)
+After 2nd subs exp: 
+2.22044604925031e-16*t57 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28)
+
+Inter step: t58 = t15*t34   # Operations:5
+Before 1st subs exp: 
+1.11022302462516e-16*t15*t34 + 1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.11022302462516e-16*t58
+After 1st subs exp: 
+1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 2.22044604925031e-16*t58
+After adjust coeff exp: 
+4.44089209850063e-16*t15*(t31 + t32) + 4.44089209850063e-16*t58
+After 2nd subs exp: 
+1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 2.22044604925031e-16*t58
+
+Inter step: t59 = -t58   # Operations:5
+Before 1st subs exp: 
+1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 2.22044604925031e-16*t58
+After 1st subs exp: 
+1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 2.22044604925031e-16*t58
+After adjust coeff exp: 
+4.44089209850063e-16*t15*(t31 + t32) + 4.44089209850063e-16*t58
+After 2nd subs exp: 
+1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 2.22044604925031e-16*t58
+
+Inter step: t60 = t56 + t57   # Operations:11
+Before 1st subs exp: 
+1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 2.22044604925031e-16*t56 + 2.22044604925031e-16*t57 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t60
+After 1st subs exp: 
+1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28)
+After adjust coeff exp: 
+4.44089209850063e-16*t5*(t23 + t24) + 4.44089209850063e-16*t56 + 4.44089209850063e-16*t57 + 4.44089209850063e-16*t6*(t27 + t28)
+After 2nd subs exp: 
+1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28)
+
+Inter step: t61 = t59 + t60   # Operations:19
+Before 1st subs exp: 
+1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 2.22044604925031e-16*t58 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t61
+After 1st subs exp: 
+1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 2.22044604925031e-16*t58 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t61
+After adjust coeff exp: 
+4.44089209850063e-16*t15*(t31 + t32) + 4.44089209850063e-16*t5*(t23 + t24) + 4.44089209850063e-16*t56 + 4.44089209850063e-16*t57 + 4.44089209850063e-16*t58 + 4.44089209850063e-16*t6*(t27 + t28) + 4.44089209850063e-16*t61
+After 2nd subs exp: 
+1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 2.22044604925031e-16*t58 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t61
+
+Inter step: t62 = t55*t61   # Operations:23
+Before 1st subs exp: 
+5.55111512312579e-16*t55*t61 + 1.0*t55*(1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 2.22044604925031e-16*t58 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t61) + 1.11022302462516e-16*t62
+After 1st subs exp: 
+1.0*t55*(1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 2.22044604925031e-16*t58 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t61) + 6.66133814775094e-16*t62
+After adjust coeff exp: 
+4.44089209850063e-16*t55*(t15*(t31 + t32) + t5*(t23 + t24) + t56 + t57 + t58 + t6*(t27 + t28) + t61) + 6.66133814775094e-16*t62
+After 2nd subs exp: 
+1.0*t55*(1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 2.22044604925031e-16*t58 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t61) + 6.66133814775094e-16*t62
+
+Inter step: t63 = t10**2   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t10**2 + 1.11022302462516e-16*t63
+After 1st subs exp: 
+3.33066907387547e-16*t63
+After adjust coeff exp: 
+3.33066907387547e-16*t63
+After 2nd subs exp: 
+3.33066907387547e-16*t63
+
+Inter step: t64 = t15**2   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t15**2 + 1.11022302462516e-16*t64
+After 1st subs exp: 
+3.33066907387547e-16*t64
+After adjust coeff exp: 
+3.33066907387547e-16*t64
+After 2nd subs exp: 
+3.33066907387547e-16*t64
+
+Inter step: t65 = t8**2   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t65 + 2.22044604925031e-16*t8**2
+After 1st subs exp: 
+3.33066907387547e-16*t65
+After adjust coeff exp: 
+3.33066907387547e-16*t65
+After 2nd subs exp: 
+3.33066907387547e-16*t65
+
+Inter step: t66 = t63 + t64   # Operations:1
+Before 1st subs exp: 
+3.33066907387547e-16*t63 + 3.33066907387547e-16*t64 + 1.11022302462516e-16*t66
+After 1st subs exp: 
+4.44089209850063e-16*t66
+After adjust coeff exp: 
+4.44089209850063e-16*t66
+After 2nd subs exp: 
+4.44089209850063e-16*t66
+
+Inter step: t67 = t65 + t66   # Operations:1
+Before 1st subs exp: 
+3.33066907387547e-16*t65 + 4.44089209850063e-16*t66 + 1.11022302462516e-16*t67
+After 1st subs exp: 
+4.44089209850063e-16*t65 + 5.55111512312578e-16*t66
+After adjust coeff exp: 
+5.55111512312578e-16*t65 + 5.55111512312578e-16*t66
+After 2nd subs exp: 
+5.55111512312579e-16*t67
+
+Inter step: t68 = t21*t5   # Operations:5
+Before 1st subs exp: 
+1.11022302462516e-16*t21*t5 + 1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.11022302462516e-16*t68
+After 1st subs exp: 
+1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 2.22044604925031e-16*t68
+After adjust coeff exp: 
+4.44089209850063e-16*t5*(t18 + t19) + 4.44089209850063e-16*t68
+After 2nd subs exp: 
+1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 2.22044604925031e-16*t68
+
+Inter step: t69 = t38*t6   # Operations:5
+Before 1st subs exp: 
+1.11022302462516e-16*t38*t6 + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 1.11022302462516e-16*t69
+After 1st subs exp: 
+1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 2.22044604925031e-16*t69
+After adjust coeff exp: 
+4.44089209850063e-16*t6*(t35 + t36) + 4.44089209850063e-16*t69
+After 2nd subs exp: 
+1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 2.22044604925031e-16*t69
+
+Inter step: t70 = t22*t34   # Operations:5
+Before 1st subs exp: 
+1.11022302462516e-16*t22*t34 + 1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.11022302462516e-16*t70
+After 1st subs exp: 
+1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 2.22044604925031e-16*t70
+After adjust coeff exp: 
+4.44089209850063e-16*t22*(t31 + t32) + 4.44089209850063e-16*t70
+After 2nd subs exp: 
+1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 2.22044604925031e-16*t70
+
+Inter step: t71 = -t70   # Operations:5
+Before 1st subs exp: 
+1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 2.22044604925031e-16*t70
+After 1st subs exp: 
+1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 2.22044604925031e-16*t70
+After adjust coeff exp: 
+4.44089209850063e-16*t22*(t31 + t32) + 4.44089209850063e-16*t70
+After 2nd subs exp: 
+1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 2.22044604925031e-16*t70
+
+Inter step: t72 = t68 + t69   # Operations:11
+Before 1st subs exp: 
+1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 2.22044604925031e-16*t68 + 2.22044604925031e-16*t69 + 1.11022302462516e-16*t72
+After 1st subs exp: 
+1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69
+After adjust coeff exp: 
+4.44089209850063e-16*t5*(t18 + t19) + 4.44089209850063e-16*t6*(t35 + t36) + 4.44089209850063e-16*t68 + 4.44089209850063e-16*t69
+After 2nd subs exp: 
+1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69
+
+Inter step: t73 = t71 + t72   # Operations:19
+Before 1st subs exp: 
+1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69 + 2.22044604925031e-16*t70 + 1.11022302462516e-16*t73
+After 1st subs exp: 
+1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69 + 2.22044604925031e-16*t70 + 1.11022302462516e-16*t73
+After adjust coeff exp: 
+4.44089209850063e-16*t22*(t31 + t32) + 4.44089209850063e-16*t5*(t18 + t19) + 4.44089209850063e-16*t6*(t35 + t36) + 4.44089209850063e-16*t68 + 4.44089209850063e-16*t69 + 4.44089209850063e-16*t70 + 4.44089209850063e-16*t73
+After 2nd subs exp: 
+1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69 + 2.22044604925031e-16*t70 + 1.11022302462516e-16*t73
+
+Inter step: t74 = t67*t73   # Operations:23
+Before 1st subs exp: 
+5.55111512312579e-16*t67*t73 + 1.0*t67*(1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69 + 2.22044604925031e-16*t70 + 1.11022302462516e-16*t73) + 1.11022302462516e-16*t74
+After 1st subs exp: 
+1.0*t67*(1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69 + 2.22044604925031e-16*t70 + 1.11022302462516e-16*t73) + 6.66133814775094e-16*t74
+After adjust coeff exp: 
+4.44089209850063e-16*t67*(t22*(t31 + t32) + t5*(t18 + t19) + t6*(t35 + t36) + t68 + t69 + t70 + t73) + 6.66133814775094e-16*t74
+After 2nd subs exp: 
+1.0*t67*(1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69 + 2.22044604925031e-16*t70 + 1.11022302462516e-16*t73) + 6.66133814775094e-16*t74
+
+Inter step: t75 = -t74   # Operations:23
+Before 1st subs exp: 
+1.0*t67*(1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69 + 2.22044604925031e-16*t70 + 1.11022302462516e-16*t73) + 6.66133814775094e-16*t74
+After 1st subs exp: 
+1.0*t67*(1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69 + 2.22044604925031e-16*t70 + 1.11022302462516e-16*t73) + 6.66133814775094e-16*t74
+After adjust coeff exp: 
+4.44089209850063e-16*t67*(t22*(t31 + t32) + t5*(t18 + t19) + t6*(t35 + t36) + t68 + t69 + t70 + t73) + 6.66133814775094e-16*t74
+After 2nd subs exp: 
+1.0*t67*(1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69 + 2.22044604925031e-16*t70 + 1.11022302462516e-16*t73) + 6.66133814775094e-16*t74
+
+Inter step: t76 = t16**2   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t16**2 + 1.11022302462516e-16*t76
+After 1st subs exp: 
+3.33066907387547e-16*t76
+After adjust coeff exp: 
+3.33066907387547e-16*t76
+After 2nd subs exp: 
+3.33066907387547e-16*t76
+
+Inter step: t77 = t17**2   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t17**2 + 1.11022302462516e-16*t77
+After 1st subs exp: 
+3.33066907387547e-16*t77
+After adjust coeff exp: 
+3.33066907387547e-16*t77
+After 2nd subs exp: 
+3.33066907387547e-16*t77
+
+Inter step: t78 = t6**2   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t6**2 + 1.11022302462516e-16*t78
+After 1st subs exp: 
+3.33066907387547e-16*t78
+After adjust coeff exp: 
+3.33066907387547e-16*t78
+After 2nd subs exp: 
+3.33066907387547e-16*t78
+
+Inter step: t79 = t76 + t77   # Operations:1
+Before 1st subs exp: 
+3.33066907387547e-16*t76 + 3.33066907387547e-16*t77 + 1.11022302462516e-16*t79
+After 1st subs exp: 
+4.44089209850063e-16*t79
+After adjust coeff exp: 
+4.44089209850063e-16*t79
+After 2nd subs exp: 
+4.44089209850063e-16*t79
+
+Inter step: t80 = t78 + t79   # Operations:1
+Before 1st subs exp: 
+3.33066907387547e-16*t78 + 4.44089209850063e-16*t79 + 1.11022302462516e-16*t80
+After 1st subs exp: 
+4.44089209850063e-16*t78 + 5.55111512312578e-16*t79
+After adjust coeff exp: 
+5.55111512312578e-16*t78 + 5.55111512312578e-16*t79
+After 2nd subs exp: 
+5.55111512312579e-16*t80
+
+Inter step: t81 = t14*t5   # Operations:5
+Before 1st subs exp: 
+1.11022302462516e-16*t14*t5 + 1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 1.11022302462516e-16*t81
+After 1st subs exp: 
+1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 2.22044604925031e-16*t81
+After adjust coeff exp: 
+4.44089209850063e-16*t5*(t11 + t12) + 4.44089209850063e-16*t81
+After 2nd subs exp: 
+1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 2.22044604925031e-16*t81
+
+Inter step: t82 = t22*t30   # Operations:5
+Before 1st subs exp: 
+1.11022302462516e-16*t22*t30 + 1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t82
+After 1st subs exp: 
+1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 2.22044604925031e-16*t82
+After adjust coeff exp: 
+4.44089209850063e-16*t22*(t27 + t28) + 4.44089209850063e-16*t82
+After 2nd subs exp: 
+1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 2.22044604925031e-16*t82
+
+Inter step: t83 = t15*t38   # Operations:5
+Before 1st subs exp: 
+1.11022302462516e-16*t15*t38 + 1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 1.11022302462516e-16*t83
+After 1st subs exp: 
+1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 2.22044604925031e-16*t83
+After adjust coeff exp: 
+4.44089209850063e-16*t15*(t35 + t36) + 4.44089209850063e-16*t83
+After 2nd subs exp: 
+1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 2.22044604925031e-16*t83
+
+Inter step: t84 = -t83   # Operations:5
+Before 1st subs exp: 
+1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 2.22044604925031e-16*t83
+After 1st subs exp: 
+1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 2.22044604925031e-16*t83
+After adjust coeff exp: 
+4.44089209850063e-16*t15*(t35 + t36) + 4.44089209850063e-16*t83
+After 2nd subs exp: 
+1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 2.22044604925031e-16*t83
+
+Inter step: t85 = t81 + t82   # Operations:11
+Before 1st subs exp: 
+1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 2.22044604925031e-16*t81 + 2.22044604925031e-16*t82 + 1.11022302462516e-16*t85
+After 1st subs exp: 
+1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 3.33066907387547e-16*t81 + 3.33066907387547e-16*t82
+After adjust coeff exp: 
+4.44089209850063e-16*t22*(t27 + t28) + 4.44089209850063e-16*t5*(t11 + t12) + 4.44089209850063e-16*t81 + 4.44089209850063e-16*t82
+After 2nd subs exp: 
+1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 3.33066907387547e-16*t81 + 3.33066907387547e-16*t82
+
+Inter step: t86 = t84 + t85   # Operations:19
+Before 1st subs exp: 
+1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 3.33066907387547e-16*t81 + 3.33066907387547e-16*t82 + 2.22044604925031e-16*t83 + 1.11022302462516e-16*t86
+After 1st subs exp: 
+1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 3.33066907387547e-16*t81 + 3.33066907387547e-16*t82 + 2.22044604925031e-16*t83 + 1.11022302462516e-16*t86
+After adjust coeff exp: 
+4.44089209850063e-16*t15*(t35 + t36) + 4.44089209850063e-16*t22*(t27 + t28) + 4.44089209850063e-16*t5*(t11 + t12) + 4.44089209850063e-16*t81 + 4.44089209850063e-16*t82 + 4.44089209850063e-16*t83 + 4.44089209850063e-16*t86
+After 2nd subs exp: 
+1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 3.33066907387547e-16*t81 + 3.33066907387547e-16*t82 + 2.22044604925031e-16*t83 + 1.11022302462516e-16*t86
+
+Inter step: t87 = t80*t86   # Operations:23
+Before 1st subs exp: 
+5.55111512312579e-16*t80*t86 + 1.0*t80*(1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 3.33066907387547e-16*t81 + 3.33066907387547e-16*t82 + 2.22044604925031e-16*t83 + 1.11022302462516e-16*t86) + 1.11022302462516e-16*t87
+After 1st subs exp: 
+1.0*t80*(1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 3.33066907387547e-16*t81 + 3.33066907387547e-16*t82 + 2.22044604925031e-16*t83 + 1.11022302462516e-16*t86) + 6.66133814775094e-16*t87
+After adjust coeff exp: 
+4.44089209850063e-16*t80*(t15*(t35 + t36) + t22*(t27 + t28) + t5*(t11 + t12) + t81 + t82 + t83 + t86) + 6.66133814775094e-16*t87
+After 2nd subs exp: 
+1.0*t80*(1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 3.33066907387547e-16*t81 + 3.33066907387547e-16*t82 + 2.22044604925031e-16*t83 + 1.11022302462516e-16*t86) + 6.66133814775094e-16*t87
+
+Inter step: t88 = -t87   # Operations:23
+Before 1st subs exp: 
+1.0*t80*(1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 3.33066907387547e-16*t81 + 3.33066907387547e-16*t82 + 2.22044604925031e-16*t83 + 1.11022302462516e-16*t86) + 6.66133814775094e-16*t87
+After 1st subs exp: 
+1.0*t80*(1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 3.33066907387547e-16*t81 + 3.33066907387547e-16*t82 + 2.22044604925031e-16*t83 + 1.11022302462516e-16*t86) + 6.66133814775094e-16*t87
+After adjust coeff exp: 
+4.44089209850063e-16*t80*(t15*(t35 + t36) + t22*(t27 + t28) + t5*(t11 + t12) + t81 + t82 + t83 + t86) + 6.66133814775094e-16*t87
+After 2nd subs exp: 
+1.0*t80*(1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 3.33066907387547e-16*t81 + 3.33066907387547e-16*t82 + 2.22044604925031e-16*t83 + 1.11022302462516e-16*t86) + 6.66133814775094e-16*t87
+
+Inter step: t89 = t50 + t62   # Operations:44
+Before 1st subs exp: 
+1.0*t43*(1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 2.22044604925031e-16*t46 + 1.11022302462516e-16*t49 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)) + 6.66133814775094e-16*t50 + 1.0*t55*(1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 2.22044604925031e-16*t58 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t61) + 6.66133814775094e-16*t62 + 1.11022302462516e-16*t89
+After 1st subs exp: 
+1.0*t43*(1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 2.22044604925031e-16*t46 + 1.11022302462516e-16*t49 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)) + 7.7715611723761e-16*t50 + 1.0*t55*(1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 2.22044604925031e-16*t58 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t61) + 7.7715611723761e-16*t62
+After adjust coeff exp: 
+4.44089209850063e-16*t43*(t15*(t18 + t19) + t22*(t23 + t24) + t44 + t45 + t46 + t49 + t6*(t11 + t12)) + 7.7715611723761e-16*t50 + 4.44089209850063e-16*t55*(t15*(t31 + t32) + t5*(t23 + t24) + t56 + t57 + t58 + t6*(t27 + t28) + t61) + 7.7715611723761e-16*t62
+After 2nd subs exp: 
+1.0*t43*(1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 2.22044604925031e-16*t46 + 1.11022302462516e-16*t49 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)) + 7.7715611723761e-16*t50 + 1.0*t55*(1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 2.22044604925031e-16*t58 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t61) + 7.7715611723761e-16*t62
+
+Inter step: t90 = t75 + t89   # Operations:67
+Before 1st subs exp: 
+1.0*t43*(1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 2.22044604925031e-16*t46 + 1.11022302462516e-16*t49 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)) + 7.7715611723761e-16*t50 + 1.0*t55*(1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 2.22044604925031e-16*t58 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t61) + 7.7715611723761e-16*t62 + 1.0*t67*(1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69 + 2.22044604925031e-16*t70 + 1.11022302462516e-16*t73) + 6.66133814775094e-16*t74 + 1.11022302462516e-16*t90
+After 1st subs exp: 
+1.0*t43*(1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 2.22044604925031e-16*t46 + 1.11022302462516e-16*t49 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)) + 7.7715611723761e-16*t50 + 1.0*t55*(1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 2.22044604925031e-16*t58 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t61) + 7.7715611723761e-16*t62 + 1.0*t67*(1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69 + 2.22044604925031e-16*t70 + 1.11022302462516e-16*t73) + 6.66133814775094e-16*t74 + 1.11022302462516e-16*t90
+After adjust coeff exp: 
+4.44089209850063e-16*t43*(t15*(t18 + t19) + t22*(t23 + t24) + t44 + t45 + t46 + t49 + t6*(t11 + t12)) + 7.7715611723761e-16*t50 + 4.44089209850063e-16*t55*(t15*(t31 + t32) + t5*(t23 + t24) + t56 + t57 + t58 + t6*(t27 + t28) + t61) + 7.7715611723761e-16*t62 + 4.44089209850063e-16*t67*(t22*(t31 + t32) + t5*(t18 + t19) + t6*(t35 + t36) + t68 + t69 + t70 + t73) + 7.7715611723761e-16*t74 + 1.11022302462516e-16*t90
+After 2nd subs exp: 
+1.0*t43*(1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 2.22044604925031e-16*t46 + 1.11022302462516e-16*t49 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)) + 7.7715611723761e-16*t50 + 1.0*t55*(1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 2.22044604925031e-16*t58 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t61) + 7.7715611723761e-16*t62 + 1.0*t67*(1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69 + 2.22044604925031e-16*t70 + 1.11022302462516e-16*t73) + 6.66133814775094e-16*t74 + 1.11022302462516e-16*t90
+
+Inter step: t91 = t88 + t90   # Operations:85
+Before 1st subs exp: 
+1.0*t43*(1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 2.22044604925031e-16*t46 + 1.11022302462516e-16*t49 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)) + 7.7715611723761e-16*t50 + 1.0*t55*(1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 2.22044604925031e-16*t58 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t61) + 7.7715611723761e-16*t62 + 1.0*t67*(1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69 + 2.22044604925031e-16*t70 + 1.11022302462516e-16*t73) + 6.66133814775094e-16*t74 + 1.0*t80*(1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 3.33066907387547e-16*t81 + 3.33066907387547e-16*t82 + 2.22044604925031e-16*t83 + 1.11022302462516e-16*t86) + 6.66133814775094e-16*t87 + 1.11022302462516e-16*t90 + 1.11022302462516e-16*t91
+After 1st subs exp: 
+1.0*t43*(1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 2.22044604925031e-16*t46 + 1.11022302462516e-16*t49 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)) + 7.7715611723761e-16*t50 + 1.0*t55*(1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 2.22044604925031e-16*t58 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t61) + 7.7715611723761e-16*t62 + 1.0*t67*(1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69 + 2.22044604925031e-16*t70 + 1.11022302462516e-16*t73) + 6.66133814775094e-16*t74 + 1.0*t80*(1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 3.33066907387547e-16*t81 + 3.33066907387547e-16*t82 + 2.22044604925031e-16*t83 + 1.11022302462516e-16*t86) + 7.7715611723761e-16*t87 + 2.22044604925031e-16*t90
+After adjust coeff exp: 
+4.44089209850063e-16*t43*(t15*(t18 + t19) + t22*(t23 + t24) + t44 + t45 + t46 + t49 + t6*(t11 + t12)) + 7.7715611723761e-16*t50 + 4.44089209850063e-16*t55*(t15*(t31 + t32) + t5*(t23 + t24) + t56 + t57 + t58 + t6*(t27 + t28) + t61) + 7.7715611723761e-16*t62 + 4.44089209850063e-16*t67*(t22*(t31 + t32) + t5*(t18 + t19) + t6*(t35 + t36) + t68 + t69 + t70 + t73) + 7.7715611723761e-16*t74 + 4.44089209850063e-16*t80*(t15*(t35 + t36) + t22*(t27 + t28) + t5*(t11 + t12) + t81 + t82 + t83 + t86) + 7.7715611723761e-16*t87 + 7.7715611723761e-16*t90
+After 2nd subs exp: 
+1.0*t43*(1.0*t15*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t22*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t44 + 3.33066907387547e-16*t45 + 2.22044604925031e-16*t46 + 1.11022302462516e-16*t49 + 1.0*t6*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12)) + 7.7715611723761e-16*t50 + 1.0*t55*(1.0*t15*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t23 + 4.44089209850063e-16*t24) + 3.33066907387547e-16*t56 + 3.33066907387547e-16*t57 + 2.22044604925031e-16*t58 + 1.0*t6*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.11022302462516e-16*t61) + 7.7715611723761e-16*t62 + 1.0*t67*(1.0*t22*(4.44089209850063e-16*t31 + 4.44089209850063e-16*t32) + 1.0*t5*(4.44089209850063e-16*t18 + 4.44089209850063e-16*t19) + 1.0*t6*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 3.33066907387547e-16*t68 + 3.33066907387547e-16*t69 + 2.22044604925031e-16*t70 + 1.11022302462516e-16*t73) + 6.66133814775094e-16*t74 + 1.0*t80*(1.0*t15*(4.44089209850063e-16*t35 + 4.44089209850063e-16*t36) + 1.0*t22*(4.44089209850063e-16*t27 + 4.44089209850063e-16*t28) + 1.0*t5*(4.44089209850063e-16*t11 + 4.44089209850063e-16*t12) + 3.33066907387547e-16*t81 + 3.33066907387547e-16*t82 + 2.22044604925031e-16*t83 + 1.11022302462516e-16*t86) + 7.7715611723761e-16*t87 + 2.22044604925031e-16*t90
+
+
+Double substitution:
+1.0*t43*(8.88178419700126e-16*t15*(t18 + t19) + 7.7715611723761e-16*t22*(t23 + t24) + 8.88178419700126e-16*t6*(t11 + t12)) + 9.99200722162642e-16*t50 + 1.0*t55*(7.7715611723761e-16*t15*(t31 + t32) + 8.88178419700126e-16*t5*(t23 + t24) + 8.88178419700126e-16*t6*(t27 + t28)) + 9.99200722162642e-16*t62 + 1.0*t67*(7.7715611723761e-16*t22*(t31 + t32) + 8.88178419700126e-16*t5*(t18 + t19) + 8.88178419700126e-16*t6*(t35 + t36)) + 8.88178419700126e-16*t74 + 1.0*t80*(7.7715611723761e-16*t15*(t35 + t36) + 8.88178419700126e-16*t22*(t27 + t28) + 8.88178419700126e-16*t5*(t11 + t12)) + 7.7715611723761e-16*t87
+#Operations: 53
+
+
+Final adjusting coefficient:
+8.88178419700127e-16*t43*(t15*(t18 + t19) + t22*(t23 + t24) + t6*(t11 + t12)) + 9.99200722162642e-16*t50 + 8.88178419700127e-16*t55*(t15*(t31 + t32) + t5*(t23 + t24) + t6*(t27 + t28)) + 9.99200722162642e-16*t62 + 8.88178419700127e-16*t67*(t22*(t31 + t32) + t5*(t18 + t19) + t6*(t35 + t36)) + 9.99200722162642e-16*t74 + 8.88178419700127e-16*t80*(t15*(t35 + t36) + t22*(t27 + t28) + t5*(t11 + t12)) + 9.99200722162642e-16*t87
+#Operations: 53
+
+
+Tabusearch parameters: 
+Number  of partitions: 2
+Number  of search steps: 200
+List size: 40
+Random cycle length: 5
+Numpar cycle length: 5
+
+Tabusearch steps: 
+[0, 0, 0, 0, 1, 1, 1, 1]
+Step: 1 RCycle: 0 NPCycle: 0 #Par: 2 BFCandicate: 42 BestFound: 42
+[1, 0, 0, 0, 1, 1, 1, 1]
+Step: 2 RCycle: 1 NPCycle: 0 #Par: 2 BFCandicate: 43 BestFound: 42
+[1, 1, 0, 0, 1, 1, 1, 1]
+Step: 3 RCycle: 2 NPCycle: 0 #Par: 2 BFCandicate: 44 BestFound: 42
+[0, 1, 0, 0, 1, 1, 1, 1]
+Step: 4 RCycle: 2 NPCycle: 0 #Par: 2 BFCandicate: 43 BestFound: 42
+[0, 0, 0, 0, 1, 1, 1, 1]
+Step: 5 RCycle: 2 NPCycle: 0 #Par: 2 BFCandicate: 42 BestFound: 42
+[0, 1, 0, 0, 1, 1, 1, 1]
+Step: 6 RCycle: 3 NPCycle: 0 #Par: 2 BFCandicate: 43 BestFound: 42
+[0, 0, 0, 0, 1, 1, 1, 1]
+Step: 7 RCycle: 3 NPCycle: 0 #Par: 2 BFCandicate: 42 BestFound: 42
+[0, 1, 0, 0, 1, 1, 1, 1]
+Step: 8 RCycle: 4 NPCycle: 0 #Par: 2 BFCandicate: 43 BestFound: 42
+[0, 0, 0, 0, 1, 1, 1, 1]
+Step: 9 RCycle: 4 NPCycle: 0 #Par: 2 BFCandicate: 42 BestFound: 42
+[0, 1, 0, 0, 1, 1, 1, 1]
+Step: 10 RCycle: 5 NPCycle: 0 #Par: 2 BFCandicate: 43 BestFound: 42
+[1, 0, 1, 0, 1, 1, 0, 0]
+Step: 11 RCycle: 1 NPCycle: 1 #Par: 2 BFCandicate: 45 BestFound: 42
+[0, 0, 1, 0, 1, 1, 0, 0]
+Step: 12 RCycle: 2 NPCycle: 1 #Par: 2 BFCandicate: 45 BestFound: 42
+[0, 1, 1, 0, 1, 1, 0, 0]
+Step: 13 RCycle: 3 NPCycle: 1 #Par: 2 BFCandicate: 45 BestFound: 42
+[1, 1, 1, 0, 1, 1, 0, 0]
+Step: 14 RCycle: 4 NPCycle: 1 #Par: 2 BFCandicate: 45 BestFound: 42
+[1, 0, 1, 0, 1, 1, 0, 0]
+Step: 15 RCycle: 5 NPCycle: 1 #Par: 2 BFCandicate: 45 BestFound: 42
+[1, 1, 0, 0, 1, 0, 1, 0]
+Step: 16 RCycle: 1 NPCycle: 2 #Par: 2 BFCandicate: 45 BestFound: 42
+[0, 1, 0, 0, 1, 0, 1, 0]
+Step: 17 RCycle: 2 NPCycle: 2 #Par: 2 BFCandicate: 45 BestFound: 42
+[0, 0, 0, 0, 1, 0, 1, 0]
+Step: 18 RCycle: 3 NPCycle: 2 #Par: 2 BFCandicate: 45 BestFound: 42
+[1, 0, 0, 0, 1, 0, 1, 0]
+Step: 19 RCycle: 4 NPCycle: 2 #Par: 2 BFCandicate: 45 BestFound: 42
+[1, 1, 0, 0, 1, 0, 1, 0]
+Step: 20 RCycle: 5 NPCycle: 2 #Par: 2 BFCandicate: 45 BestFound: 42
+[0, 1, 1, 0, 0, 0, 0, 0]
+Step: 21 RCycle: 0 NPCycle: 3 #Par: 2 BFCandicate: 44 BestFound: 42
+[1, 1, 1, 0, 0, 0, 0, 0]
+Step: 22 RCycle: 0 NPCycle: 3 #Par: 2 BFCandicate: 43 BestFound: 42
+[1, 1, 1, 1, 0, 0, 0, 0]
+Step: 23 RCycle: 0 NPCycle: 3 #Par: 2 BFCandicate: 42 BestFound: 42
+[0, 1, 1, 1, 0, 0, 0, 0]
+Step: 24 RCycle: 1 NPCycle: 3 #Par: 2 BFCandicate: 43 BestFound: 42
+[0, 0, 1, 1, 0, 0, 0, 0]
+Step: 25 RCycle: 2 NPCycle: 3 #Par: 2 BFCandicate: 44 BestFound: 42
+[1, 0, 1, 1, 0, 0, 0, 0]
+Step: 26 RCycle: 2 NPCycle: 3 #Par: 2 BFCandicate: 43 BestFound: 42
+[1, 1, 1, 1, 0, 0, 0, 0]
+Step: 27 RCycle: 2 NPCycle: 3 #Par: 2 BFCandicate: 42 BestFound: 42
+[1, 0, 1, 1, 0, 0, 0, 0]
+Step: 28 RCycle: 3 NPCycle: 3 #Par: 2 BFCandicate: 43 BestFound: 42
+[1, 1, 1, 1, 0, 0, 0, 0]
+Step: 29 RCycle: 3 NPCycle: 3 #Par: 2 BFCandicate: 42 BestFound: 42
+[1, 0, 1, 1, 0, 0, 0, 0]
+Step: 30 RCycle: 4 NPCycle: 3 #Par: 2 BFCandicate: 43 BestFound: 42
+[1, 1, 1, 1, 0, 0, 0, 0]
+Step: 31 RCycle: 4 NPCycle: 3 #Par: 2 BFCandicate: 42 BestFound: 42
+[1, 0, 1, 1, 0, 0, 0, 0]
+Step: 32 RCycle: 5 NPCycle: 3 #Par: 2 BFCandicate: 43 BestFound: 42
+[1, 0, 0, 1, 1, 0, 1, 0]
+Step: 33 RCycle: 1 NPCycle: 4 #Par: 2 BFCandicate: 45 BestFound: 42
+[0, 0, 0, 1, 1, 0, 1, 0]
+Step: 34 RCycle: 2 NPCycle: 4 #Par: 2 BFCandicate: 45 BestFound: 42
+[0, 1, 0, 1, 1, 0, 1, 0]
+Step: 35 RCycle: 3 NPCycle: 4 #Par: 2 BFCandicate: 45 BestFound: 42
+[1, 1, 0, 1, 1, 0, 1, 0]
+Step: 36 RCycle: 4 NPCycle: 4 #Par: 2 BFCandicate: 45 BestFound: 42
+[1, 0, 0, 1, 1, 0, 1, 0]
+Step: 37 RCycle: 5 NPCycle: 4 #Par: 2 BFCandicate: 45 BestFound: 42
+[0, 0, 1, 0, 1, 1, 1, 1]
+Step: 38 RCycle: 0 NPCycle: 0 #Par: 3 BFCandicate: 43 BestFound: 42
+[0, 0, 2, 0, 1, 1, 1, 1]
+Step: 39 RCycle: 1 NPCycle: 0 #Par: 3 BFCandicate: 43 BestFound: 42
+[2, 0, 2, 0, 1, 1, 1, 1]
+Step: 40 RCycle: 2 NPCycle: 0 #Par: 3 BFCandicate: 43 BestFound: 42
+[2, 2, 2, 0, 1, 1, 1, 1]
+Step: 41 RCycle: 3 NPCycle: 0 #Par: 3 BFCandicate: 43 BestFound: 42
+[2, 2, 2, 2, 1, 1, 1, 1]
+Step: 42 RCycle: 3 NPCycle: 0 #Par: 3 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 0, 1, 1, 1]
+Step: 43 RCycle: 4 NPCycle: 0 #Par: 3 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 0, 0, 1, 1]
+Step: 44 RCycle: 5 NPCycle: 0 #Par: 3 BFCandicate: 42 BestFound: 42
+[1, 1, 0, 0, 0, 0, 2, 1]
+Step: 45 RCycle: 1 NPCycle: 1 #Par: 3 BFCandicate: 45 BestFound: 42
+[1, 1, 0, 0, 0, 0, 2, 0]
+Step: 46 RCycle: 1 NPCycle: 1 #Par: 3 BFCandicate: 44 BestFound: 42
+[1, 1, 1, 0, 0, 0, 2, 0]
+Step: 47 RCycle: 1 NPCycle: 1 #Par: 3 BFCandicate: 43 BestFound: 42
+[1, 1, 1, 1, 0, 0, 2, 0]
+Step: 48 RCycle: 1 NPCycle: 1 #Par: 3 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 2, 0, 2, 0]
+Step: 49 RCycle: 2 NPCycle: 1 #Par: 3 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 2, 2, 2, 0]
+Step: 50 RCycle: 3 NPCycle: 1 #Par: 3 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 0, 2, 2, 0]
+Step: 51 RCycle: 4 NPCycle: 1 #Par: 3 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 0, 0, 2, 0]
+Step: 52 RCycle: 5 NPCycle: 1 #Par: 3 BFCandicate: 42 BestFound: 42
+[0, 1, 1, 0, 0, 0, 2, 0]
+Step: 53 RCycle: 1 NPCycle: 2 #Par: 3 BFCandicate: 44 BestFound: 42
+[0, 1, 1, 1, 0, 0, 2, 0]
+Step: 54 RCycle: 1 NPCycle: 2 #Par: 3 BFCandicate: 43 BestFound: 42
+[2, 1, 1, 1, 0, 0, 2, 0]
+Step: 55 RCycle: 2 NPCycle: 2 #Par: 3 BFCandicate: 43 BestFound: 42
+[1, 1, 1, 1, 0, 0, 2, 0]
+Step: 56 RCycle: 2 NPCycle: 2 #Par: 3 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 0, 0, 0, 0]
+Step: 57 RCycle: 3 NPCycle: 2 #Par: 3 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 2, 0, 0, 0]
+Step: 58 RCycle: 4 NPCycle: 2 #Par: 3 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 2, 2, 0, 0]
+Step: 59 RCycle: 5 NPCycle: 2 #Par: 3 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 1, 1, 1, 2, 2]
+Step: 60 RCycle: 1 NPCycle: 3 #Par: 3 BFCandicate: 43 BestFound: 42
+[0, 0, 0, 0, 1, 1, 2, 2]
+Step: 61 RCycle: 1 NPCycle: 3 #Par: 3 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 2, 1, 2, 2]
+Step: 62 RCycle: 2 NPCycle: 3 #Par: 3 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 2, 2, 2, 2]
+Step: 63 RCycle: 3 NPCycle: 3 #Par: 3 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 1, 2, 2, 2]
+Step: 64 RCycle: 4 NPCycle: 3 #Par: 3 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 1, 2, 1, 2]
+Step: 65 RCycle: 5 NPCycle: 3 #Par: 3 BFCandicate: 42 BestFound: 42
+[0, 0, 1, 1, 1, 2, 1, 1]
+Step: 66 RCycle: 1 NPCycle: 4 #Par: 3 BFCandicate: 44 BestFound: 42
+[0, 0, 0, 1, 1, 2, 1, 1]
+Step: 67 RCycle: 1 NPCycle: 4 #Par: 3 BFCandicate: 43 BestFound: 42
+[0, 0, 0, 0, 1, 2, 1, 1]
+Step: 68 RCycle: 1 NPCycle: 4 #Par: 3 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 2, 2, 1, 1]
+Step: 69 RCycle: 2 NPCycle: 4 #Par: 3 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 2, 1, 1, 1]
+Step: 70 RCycle: 3 NPCycle: 4 #Par: 3 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 1, 1, 1, 1]
+Step: 71 RCycle: 4 NPCycle: 4 #Par: 3 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 1, 1, 2, 1]
+Step: 72 RCycle: 5 NPCycle: 4 #Par: 3 BFCandicate: 42 BestFound: 42
+[2, 1, 2, 1, 1, 1, 1, 1]
+Step: 73 RCycle: 1 NPCycle: 0 #Par: 4 BFCandicate: 44 BestFound: 42
+[2, 2, 2, 1, 1, 1, 1, 1]
+Step: 74 RCycle: 1 NPCycle: 0 #Par: 4 BFCandicate: 43 BestFound: 42
+[2, 2, 2, 2, 1, 1, 1, 1]
+Step: 75 RCycle: 1 NPCycle: 0 #Par: 4 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 3, 1, 1, 1]
+Step: 76 RCycle: 2 NPCycle: 0 #Par: 4 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 1, 1, 1, 1]
+Step: 77 RCycle: 3 NPCycle: 0 #Par: 4 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 1, 0, 1, 1]
+Step: 78 RCycle: 4 NPCycle: 0 #Par: 4 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 3, 0, 1, 1]
+Step: 79 RCycle: 5 NPCycle: 0 #Par: 4 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 1, 1, 2, 2, 3]
+Step: 80 RCycle: 1 NPCycle: 1 #Par: 4 BFCandicate: 43 BestFound: 42
+[0, 0, 0, 0, 1, 2, 2, 3]
+Step: 81 RCycle: 1 NPCycle: 1 #Par: 4 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 2, 2, 2, 3]
+Step: 82 RCycle: 2 NPCycle: 1 #Par: 4 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 3, 2, 2, 3]
+Step: 83 RCycle: 3 NPCycle: 1 #Par: 4 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 2, 2, 2, 3]
+Step: 84 RCycle: 4 NPCycle: 1 #Par: 4 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 3, 2, 2, 3]
+Step: 85 RCycle: 5 NPCycle: 1 #Par: 4 BFCandicate: 42 BestFound: 42
+[2, 1, 2, 0, 0, 3, 1, 3]
+Step: 86 RCycle: 1 NPCycle: 2 #Par: 4 BFCandicate: 44 BestFound: 42
+[2, 2, 2, 0, 0, 3, 1, 3]
+Step: 87 RCycle: 1 NPCycle: 2 #Par: 4 BFCandicate: 43 BestFound: 42
+[2, 2, 2, 2, 0, 3, 1, 3]
+Step: 88 RCycle: 1 NPCycle: 2 #Par: 4 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 1, 3, 1, 3]
+Step: 89 RCycle: 2 NPCycle: 2 #Par: 4 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 3, 3, 1, 3]
+Step: 90 RCycle: 3 NPCycle: 2 #Par: 4 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 1, 3, 1, 3]
+Step: 91 RCycle: 4 NPCycle: 2 #Par: 4 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 1, 0, 1, 3]
+Step: 92 RCycle: 5 NPCycle: 2 #Par: 4 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 1, 2, 2, 1, 2]
+Step: 93 RCycle: 1 NPCycle: 3 #Par: 4 BFCandicate: 43 BestFound: 42
+[0, 0, 0, 0, 2, 2, 1, 2]
+Step: 94 RCycle: 1 NPCycle: 3 #Par: 4 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 3, 2, 1, 2]
+Step: 95 RCycle: 2 NPCycle: 3 #Par: 4 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 2, 2, 1, 2]
+Step: 96 RCycle: 3 NPCycle: 3 #Par: 4 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 3, 2, 1, 2]
+Step: 97 RCycle: 4 NPCycle: 3 #Par: 4 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 2, 2, 1, 2]
+Step: 98 RCycle: 5 NPCycle: 3 #Par: 4 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 0, 2, 3, 0]
+Step: 99 RCycle: 1 NPCycle: 4 #Par: 4 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 2, 2, 3, 0]
+Step: 100 RCycle: 2 NPCycle: 4 #Par: 4 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 2, 3, 0]
+Step: 101 RCycle: 3 NPCycle: 4 #Par: 4 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 0, 3, 0]
+Step: 102 RCycle: 4 NPCycle: 4 #Par: 4 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 0, 0, 3, 0]
+Step: 103 RCycle: 5 NPCycle: 4 #Par: 4 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 2, 1, 1, 1]
+Step: 104 RCycle: 1 NPCycle: 0 #Par: 5 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 3, 1, 1, 1]
+Step: 105 RCycle: 2 NPCycle: 0 #Par: 5 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 2, 1, 1, 1]
+Step: 106 RCycle: 3 NPCycle: 0 #Par: 5 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 3, 1, 1, 1]
+Step: 107 RCycle: 4 NPCycle: 0 #Par: 5 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 2, 1, 1, 1]
+Step: 108 RCycle: 5 NPCycle: 0 #Par: 5 BFCandicate: 42 BestFound: 42
+[2, 1, 2, 1, 1, 3, 3, 3]
+Step: 109 RCycle: 1 NPCycle: 1 #Par: 5 BFCandicate: 44 BestFound: 42
+[2, 2, 2, 1, 1, 3, 3, 3]
+Step: 110 RCycle: 1 NPCycle: 1 #Par: 5 BFCandicate: 43 BestFound: 42
+[2, 2, 2, 2, 1, 3, 3, 3]
+Step: 111 RCycle: 1 NPCycle: 1 #Par: 5 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 0, 3, 3, 3]
+Step: 112 RCycle: 2 NPCycle: 1 #Par: 5 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 3, 3, 3, 3]
+Step: 113 RCycle: 3 NPCycle: 1 #Par: 5 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 1, 3, 3, 3]
+Step: 114 RCycle: 4 NPCycle: 1 #Par: 5 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 4, 3, 3, 3]
+Step: 115 RCycle: 5 NPCycle: 1 #Par: 5 BFCandicate: 42 BestFound: 42
+[1, 1, 0, 1, 0, 2, 0, 0]
+Step: 116 RCycle: 1 NPCycle: 2 #Par: 5 BFCandicate: 43 BestFound: 42
+[1, 1, 1, 1, 0, 2, 0, 0]
+Step: 117 RCycle: 1 NPCycle: 2 #Par: 5 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 2, 2, 0, 0]
+Step: 118 RCycle: 2 NPCycle: 2 #Par: 5 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 2, 0, 0]
+Step: 119 RCycle: 3 NPCycle: 2 #Par: 5 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 4, 2, 0, 0]
+Step: 120 RCycle: 4 NPCycle: 2 #Par: 5 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 2, 0, 0]
+Step: 121 RCycle: 5 NPCycle: 2 #Par: 5 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 2, 0, 0, 3, 2]
+Step: 122 RCycle: 1 NPCycle: 3 #Par: 5 BFCandicate: 43 BestFound: 42
+[1, 1, 1, 1, 0, 0, 3, 2]
+Step: 123 RCycle: 1 NPCycle: 3 #Par: 5 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 2, 0, 3, 2]
+Step: 124 RCycle: 2 NPCycle: 3 #Par: 5 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 0, 3, 2]
+Step: 125 RCycle: 3 NPCycle: 3 #Par: 5 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 4, 0, 3, 2]
+Step: 126 RCycle: 4 NPCycle: 3 #Par: 5 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 0, 3, 2]
+Step: 127 RCycle: 5 NPCycle: 3 #Par: 5 BFCandicate: 42 BestFound: 42
+[0, 1, 1, 0, 0, 0, 2, 0]
+Step: 128 RCycle: 1 NPCycle: 4 #Par: 5 BFCandicate: 44 BestFound: 42
+[1, 1, 1, 0, 0, 0, 2, 0]
+Step: 129 RCycle: 1 NPCycle: 4 #Par: 5 BFCandicate: 43 BestFound: 42
+[1, 1, 1, 1, 0, 0, 2, 0]
+Step: 130 RCycle: 1 NPCycle: 4 #Par: 5 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 2, 0, 2, 0]
+Step: 131 RCycle: 2 NPCycle: 4 #Par: 5 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 0, 2, 0]
+Step: 132 RCycle: 3 NPCycle: 4 #Par: 5 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 4, 0, 2, 0]
+Step: 133 RCycle: 4 NPCycle: 4 #Par: 5 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 0, 2, 0]
+Step: 134 RCycle: 5 NPCycle: 4 #Par: 5 BFCandicate: 42 BestFound: 42
+[1, 1, 0, 2, 2, 0, 3, 0]
+Step: 135 RCycle: 1 NPCycle: 0 #Par: 6 BFCandicate: 44 BestFound: 42
+[1, 1, 1, 2, 2, 0, 3, 0]
+Step: 136 RCycle: 1 NPCycle: 0 #Par: 6 BFCandicate: 43 BestFound: 42
+[1, 1, 1, 1, 2, 0, 3, 0]
+Step: 137 RCycle: 1 NPCycle: 0 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 4, 0, 3, 0]
+Step: 138 RCycle: 2 NPCycle: 0 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 0, 3, 0]
+Step: 139 RCycle: 3 NPCycle: 0 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 4, 0, 3, 0]
+Step: 140 RCycle: 4 NPCycle: 0 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 0, 3, 0]
+Step: 141 RCycle: 5 NPCycle: 0 #Par: 6 BFCandicate: 42 BestFound: 42
+[0, 1, 1, 2, 0, 2, 0, 2]
+Step: 142 RCycle: 1 NPCycle: 1 #Par: 6 BFCandicate: 44 BestFound: 42
+[1, 1, 1, 2, 0, 2, 0, 2]
+Step: 143 RCycle: 1 NPCycle: 1 #Par: 6 BFCandicate: 43 BestFound: 42
+[1, 1, 1, 1, 0, 2, 0, 2]
+Step: 144 RCycle: 1 NPCycle: 1 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 2, 2, 0, 2]
+Step: 145 RCycle: 2 NPCycle: 1 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 2, 0, 2]
+Step: 146 RCycle: 3 NPCycle: 1 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 4, 2, 0, 2]
+Step: 147 RCycle: 4 NPCycle: 1 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 2, 0, 2]
+Step: 148 RCycle: 5 NPCycle: 1 #Par: 6 BFCandicate: 42 BestFound: 42
+[0, 1, 0, 1, 1, 2, 3, 1]
+Step: 149 RCycle: 1 NPCycle: 2 #Par: 6 BFCandicate: 44 BestFound: 42
+[0, 0, 0, 1, 1, 2, 3, 1]
+Step: 150 RCycle: 1 NPCycle: 2 #Par: 6 BFCandicate: 43 BestFound: 42
+[0, 0, 0, 0, 1, 2, 3, 1]
+Step: 151 RCycle: 1 NPCycle: 2 #Par: 6 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 2, 2, 3, 1]
+Step: 152 RCycle: 2 NPCycle: 2 #Par: 6 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 3, 2, 3, 1]
+Step: 153 RCycle: 3 NPCycle: 2 #Par: 6 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 2, 2, 3, 1]
+Step: 154 RCycle: 4 NPCycle: 2 #Par: 6 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 3, 2, 3, 1]
+Step: 155 RCycle: 5 NPCycle: 2 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 0, 1, 1, 2, 2, 3, 2]
+Step: 156 RCycle: 1 NPCycle: 3 #Par: 6 BFCandicate: 43 BestFound: 42
+[1, 1, 1, 1, 2, 2, 3, 2]
+Step: 157 RCycle: 1 NPCycle: 3 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 0, 2, 3, 2]
+Step: 158 RCycle: 2 NPCycle: 3 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 2, 3, 2]
+Step: 159 RCycle: 3 NPCycle: 3 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 4, 2, 3, 2]
+Step: 160 RCycle: 4 NPCycle: 3 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 2, 3, 2]
+Step: 161 RCycle: 5 NPCycle: 3 #Par: 6 BFCandicate: 42 BestFound: 42
+[0, 1, 0, 1, 0, 0, 0, 0]
+Step: 162 RCycle: 1 NPCycle: 4 #Par: 6 BFCandicate: 44 BestFound: 42
+[1, 1, 0, 1, 0, 0, 0, 0]
+Step: 163 RCycle: 1 NPCycle: 4 #Par: 6 BFCandicate: 43 BestFound: 42
+[1, 1, 1, 1, 0, 0, 0, 0]
+Step: 164 RCycle: 1 NPCycle: 4 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 2, 0, 0, 0]
+Step: 165 RCycle: 2 NPCycle: 4 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 0, 0, 0]
+Step: 166 RCycle: 3 NPCycle: 4 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 4, 0, 0, 0]
+Step: 167 RCycle: 4 NPCycle: 4 #Par: 6 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 0, 0, 0]
+Step: 168 RCycle: 5 NPCycle: 4 #Par: 6 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 1, 1, 2, 1]
+Step: 169 RCycle: 1 NPCycle: 0 #Par: 7 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 2, 1, 2, 1]
+Step: 170 RCycle: 2 NPCycle: 0 #Par: 7 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 3, 1, 2, 1]
+Step: 171 RCycle: 3 NPCycle: 0 #Par: 7 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 2, 1, 2, 1]
+Step: 172 RCycle: 4 NPCycle: 0 #Par: 7 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 3, 1, 2, 1]
+Step: 173 RCycle: 5 NPCycle: 0 #Par: 7 BFCandicate: 42 BestFound: 42
+[0, 0, 1, 0, 2, 2, 1, 1]
+Step: 174 RCycle: 1 NPCycle: 1 #Par: 7 BFCandicate: 43 BestFound: 42
+[0, 0, 0, 0, 2, 2, 1, 1]
+Step: 175 RCycle: 1 NPCycle: 1 #Par: 7 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 1, 2, 1, 1]
+Step: 176 RCycle: 2 NPCycle: 1 #Par: 7 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 3, 2, 1, 1]
+Step: 177 RCycle: 3 NPCycle: 1 #Par: 7 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 2, 2, 1, 1]
+Step: 178 RCycle: 4 NPCycle: 1 #Par: 7 BFCandicate: 42 BestFound: 42
+[0, 0, 0, 0, 3, 2, 1, 1]
+Step: 179 RCycle: 5 NPCycle: 1 #Par: 7 BFCandicate: 42 BestFound: 42
+[1, 0, 0, 0, 1, 0, 2, 0]
+Step: 180 RCycle: 1 NPCycle: 2 #Par: 7 BFCandicate: 45 BestFound: 42
+[0, 0, 0, 0, 1, 0, 2, 0]
+Step: 181 RCycle: 2 NPCycle: 2 #Par: 7 BFCandicate: 45 BestFound: 42
+[2, 0, 0, 0, 1, 0, 2, 0]
+Step: 182 RCycle: 3 NPCycle: 2 #Par: 7 BFCandicate: 45 BestFound: 42
+[1, 0, 0, 0, 1, 0, 2, 0]
+Step: 183 RCycle: 4 NPCycle: 2 #Par: 7 BFCandicate: 45 BestFound: 42
+[2, 0, 0, 0, 1, 0, 2, 0]
+Step: 184 RCycle: 5 NPCycle: 2 #Par: 7 BFCandicate: 45 BestFound: 42
+[2, 0, 1, 2, 1, 3, 0, 4]
+Step: 185 RCycle: 0 NPCycle: 3 #Par: 7 BFCandicate: 44 BestFound: 42
+[2, 2, 1, 2, 1, 3, 0, 4]
+Step: 186 RCycle: 0 NPCycle: 3 #Par: 7 BFCandicate: 43 BestFound: 42
+[2, 2, 2, 2, 1, 3, 0, 4]
+Step: 187 RCycle: 0 NPCycle: 3 #Par: 7 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 0, 3, 0, 4]
+Step: 188 RCycle: 1 NPCycle: 3 #Par: 7 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 3, 3, 0, 4]
+Step: 189 RCycle: 2 NPCycle: 3 #Par: 7 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 1, 3, 0, 4]
+Step: 190 RCycle: 3 NPCycle: 3 #Par: 7 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 4, 3, 0, 4]
+Step: 191 RCycle: 4 NPCycle: 3 #Par: 7 BFCandicate: 42 BestFound: 42
+[2, 2, 2, 2, 1, 3, 0, 4]
+Step: 192 RCycle: 5 NPCycle: 3 #Par: 7 BFCandicate: 42 BestFound: 42
+[1, 1, 2, 3, 2, 3, 0, 1]
+Step: 193 RCycle: 1 NPCycle: 4 #Par: 7 BFCandicate: 45 BestFound: 42
+[1, 1, 2, 3, 2, 3, 0, 0]
+Step: 194 RCycle: 1 NPCycle: 4 #Par: 7 BFCandicate: 44 BestFound: 42
+[1, 1, 1, 3, 2, 3, 0, 0]
+Step: 195 RCycle: 1 NPCycle: 4 #Par: 7 BFCandicate: 43 BestFound: 42
+[1, 1, 1, 1, 2, 3, 0, 0]
+Step: 196 RCycle: 1 NPCycle: 4 #Par: 7 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 0, 3, 0, 0]
+Step: 197 RCycle: 2 NPCycle: 4 #Par: 7 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 3, 0, 0]
+Step: 198 RCycle: 3 NPCycle: 4 #Par: 7 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 4, 3, 0, 0]
+Step: 199 RCycle: 4 NPCycle: 4 #Par: 7 BFCandicate: 42 BestFound: 42
+[1, 1, 1, 1, 3, 3, 0, 0]
+Step: 200 RCycle: 5 NPCycle: 4 #Par: 7 BFCandicate: 42 BestFound: 42
+
+
+Final Error-bound expression: (9.99200722162642e-16*t50 + 9.99200722162642e-16*t62 + 9.99200722162642e-16*t74 + 9.99200722162642e-16*t87)
++(8.88178419700127e-16*t43*(t15*(t18 + t19) + t22*(t23 + t24) + t6*(t11 + t12)) + 8.88178419700127e-16*t55*(t15*(t31 + t32) + t5*(t23 + t24) + t6*(t27 + t28)) + 8.88178419700127e-16*t67*(t22*(t31 + t32) + t5*(t18 + t19) + t6*(t35 + t36)) + 8.88178419700127e-16*t80*(t15*(t35 + t36) + t22*(t27 + t28) + t5*(t11 + t12)))
++(0)
++(0)
++(0)
++(0)
++(0)
+
+Number of operations: 62
+Calculation steps: 
+t18=fabs(t18)
+t31=fabs(t31)
+t24=fabs(t24)
+t28=fabs(t28)
+t87=fabs(t87)
+t32=fabs(t32)
+t15=fabs(t15)
+t22=fabs(t22)
+t62=fabs(t62)
+t50=fabs(t50)
+t5=fabs(t5)
+t36=fabs(t36)
+t19=fabs(t19)
+t23=fabs(t23)
+t27=fabs(t27)
+t35=fabs(t35)
+t11=fabs(t11)
+t12=fabs(t12)
+t74=fabs(t74)
+t6=fabs(t6)
+tem0=t50 + t62
+tem1=t74 + tem0
+tem2=t87 + tem1
+tem3=9.99200722162642e-16*tem2
+tem4=t18 + t19
+tem5=t23 + t24
+tem6=t11 + t12
+tem7=t31 + t32
+tem8=t27 + t28
+tem9=t35 + t36
+tem10=t15*tem4
+tem11=t22*tem5
+tem12=t6*tem6
+tem13=tem10 + tem11
+tem14=tem12 + tem13
+tem15=t43*tem14
+tem16=8.88178419700127e-16*tem15
+tem17=t15*tem7
+tem18=t5*tem5
+tem19=t6*tem8
+tem20=tem17 + tem18
+tem21=tem19 + tem20
+tem22=t55*tem21
+tem23=8.88178419700127e-16*tem22
+tem24=t22*tem7
+tem25=t5*tem4
+tem26=t6*tem9
+tem27=tem24 + tem25
+tem28=tem26 + tem27
+tem29=t67*tem28
+tem30=8.88178419700127e-16*tem29
+tem31=t15*tem9
+tem32=t22*tem8
+tem33=t5*tem6
+tem34=tem31 + tem32
+tem35=tem33 + tem34
+tem36=t80*tem35
+tem37=8.88178419700127e-16*tem36
+tem38=tem16 + tem23
+tem39=tem30 + tem38
+tem40=tem37 + tem39
+tem41=tem3 + tem40

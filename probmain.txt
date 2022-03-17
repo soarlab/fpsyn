@@ -1,0 +1,61 @@
+
+
+int main(){
+int range=100;
+int sample=100000;
+REAL varlist;
+REAL res, err, herr,lerr,merr;
+
+int i;
+int cIA=0;
+int cFPS=0;
+int cM=0;
+int cBoth=0;
+int cIAnFPS=0;
+int cFPSnIA=0;
+
+for(i=0; i<sample; i++)
+{
+
+varlist=randfl(range);
+
+
+
+//printf("%f  %f   %f   %f  %f   %f    %f  %f   %f    %f  %f   %f   %f  %f   %f\n", ax,ay,az,bx,by,bz,cx,cy,cz,dx,dy,dz,ex,ey,ez);
+
+
+FPSynFunc;
+ManualFunc;
+IAFunc;
+
+printf("%e      %e         %e         %e         %f         %f\n ", res, herr-lerr, err, merr, (herr-lerr)/2/err, merr/err);
+
+
+if ((0<herr)&&(0>lerr)){
+	cIA=cIA+1;
+	if ((res<err)&&(res>-err)){
+		cBoth=cBoth+1;
+	}
+	//else printf("%e      %e       %e       %e       %e\n ", res, lerr,herr, res-err, res+err);
+}
+
+
+
+
+if ((res<err)&&(res>-err)){
+	cFPS=cFPS+1;
+	//printf("%e      %e \n ", res, err);
+}
+
+if ((res<merr)&&(res>-merr)){
+	cM=cM+1;
+	//printf("%e      %e \n ", res, err);
+}
+
+}
+
+printf("In error IA: %d \n", cIA);
+printf("In error FPSyn: %d \n", cFPS);
+printf("In error Both: %d \n", cBoth);
+printf("In error Manual: %d \n", cM);
+}

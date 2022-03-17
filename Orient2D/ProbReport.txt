@@ -1,0 +1,9 @@
+In error IA: 200
+In error Manual: 181
+In error FPSyn: 191
+In error IA & FPSyn: 191
+In error FPSyn not IA: 0
+In error IA not FPSyn: 9
+In error Manual & FPSyn: 181
+In error FPSyn not Manual: 10
+In error Manual not FPSyn: 0

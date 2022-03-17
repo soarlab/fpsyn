@@ -1,0 +1,566 @@
+Expression: 
+a**6 + b**2 + c*d*(a**6 + b**2) + c*d
+
+Inter-steps:
+(t0, c*d, c*d)
+(t1, a**2, a**2)
+(t2, t1**2, a**4)
+(t3, t1*t2, a**6)
+(t4, b**2, b**2)
+(t5, t3 + t4, a**6 + b**2)
+(t6, t0*t5, c*d*(a**6 + b**2))
+(t7, t0 + t5, a**6 + b**2 + c*d)
+(t8, t6 + t7, a**6 + b**2 + c*d*(a**6 + b**2) + c*d)
+
+Multiplication substitutions:
+c*d -> 1.0*t0
+a**2 -> 1.0*t1
+t1**2 -> 1.0*t2
+t1*t2 -> 1.0*t3
+b**2 -> 1.0*t4
+t0*t5 -> 1.0*t6
+
+Addition substitutions:
+t5 -> 1.0*t3 + 1.0*t4
+t3 -> -t4 + 1.0*t5
+t7 -> 1.0*t0 + 1.0*t5
+t8 -> 1.0*t6 + 1.0*t7
+
+Reverse substitutions:
+t0 -> 1.0*c*d
+t1 -> 1.0*a**2
+t2 -> 1.0*t1**2
+t3 -> 1.0*t1*t2
+t4 -> 1.0*b**2
+t5 -> 1.0*t3 + 1.0*t4
+t6 -> 1.0*t0*t5
+
+Error-list:
+Inter step: t0 = c*d   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t0
+After 1st subs exp: 
+1.11022302462516e-16*t0
+After adjust coeff exp: 
+1.11022302462516e-16*t0
+After 2nd subs exp: 
+1.11022302462516e-16*t0
+
+Inter step: t1 = a**2   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t1
+After 1st subs exp: 
+1.11022302462516e-16*t1
+After adjust coeff exp: 
+1.11022302462516e-16*t1
+After 2nd subs exp: 
+1.11022302462516e-16*t1
+
+Inter step: t2 = t1**2   # Operations:1
+Before 1st subs exp: 
+2.22044604925031e-16*t1**2 + 1.11022302462516e-16*t2
+After 1st subs exp: 
+3.33066907387547e-16*t2
+After adjust coeff exp: 
+3.33066907387547e-16*t2
+After 2nd subs exp: 
+3.33066907387547e-16*t2
+
+Inter step: t3 = t1*t2   # Operations:1
+Before 1st subs exp: 
+4.44089209850063e-16*t1*t2 + 1.11022302462516e-16*t3
+After 1st subs exp: 
+5.55111512312578e-16*t3
+After adjust coeff exp: 
+5.55111512312578e-16*t3
+After 2nd subs exp: 
+5.55111512312578e-16*t3
+
+Inter step: t4 = b**2   # Operations:1
+Before 1st subs exp: 
+1.11022302462516e-16*t4
+After 1st subs exp: 
+1.11022302462516e-16*t4
+After adjust coeff exp: 
+1.11022302462516e-16*t4
+After 2nd subs exp: 
+1.11022302462516e-16*t4
+
+Inter step: t5 = t3 + t4   # Operations:1
+Before 1st subs exp: 
+5.55111512312578e-16*t3 + 1.11022302462516e-16*t4 + 1.11022302462516e-16*t5
+After 1st subs exp: 
+6.66133814775094e-16*t3 + 2.22044604925031e-16*t4
+After adjust coeff exp: 
+6.66133814775094e-16*t3 + 6.66133814775094e-16*t4
+After 2nd subs exp: 
+6.66133814775094e-16*t5
+
+Inter step: t6 = t0*t5   # Operations:1
+Before 1st subs exp: 
+7.7715611723761e-16*t0*t5 + 1.11022302462516e-16*t6
+After 1st subs exp: 
+8.88178419700126e-16*t6
+After adjust coeff exp: 
+8.88178419700126e-16*t6
+After 2nd subs exp: 
+8.88178419700126e-16*t6
+
+Inter step: t7 = t0 + t5   # Operations:3
+Before 1st subs exp: 
+1.11022302462516e-16*t0 + 6.66133814775094e-16*t5 + 1.11022302462516e-16*t7
+After 1st subs exp: 
+2.22044604925031e-16*t0 + 7.7715611723761e-16*t5
+After adjust coeff exp: 
+7.7715611723761e-16*t0 + 7.7715611723761e-16*t5
+After 2nd subs exp: 
+2.22044604925031e-16*t0 + 7.7715611723761e-16*t5
+
+Inter step: t8 = t6 + t7   # Operations:7
+Before 1st subs exp: 
+2.22044604925031e-16*t0 + 7.7715611723761e-16*t5 + 8.88178419700126e-16*t6 + 1.11022302462516e-16*t8
+After 1st subs exp: 
+2.22044604925031e-16*t0 + 7.7715611723761e-16*t5 + 8.88178419700126e-16*t6 + 1.11022302462516e-16*t8
+After adjust coeff exp: 
+2.22044604925031e-16*t0 + 8.88178419700126e-16*t5 + 8.88178419700126e-16*t6 + 2.22044604925031e-16*t8
+After 2nd subs exp: 
+2.22044604925031e-16*t0 + 7.7715611723761e-16*t5 + 8.88178419700126e-16*t6 + 1.11022302462516e-16*t8
+
+
+Double substitution:
+3.33066907387547e-16*t0 + 8.88178419700126e-16*t5 + 9.99200722162641e-16*t6
+#Operations: 5
+
+
+Final adjusting coefficient:
+3.33066907387547e-16*t0 + 9.99200722162641e-16*t5 + 9.99200722162641e-16*t6
+#Operations: 5
+
+
+Tabusearch parameters: 
+Number  of partitions: 2
+Number  of search steps: 200
+List size: 40
+Random cycle length: 5
+Numpar cycle length: 5
+
+Tabusearch steps: 
+[0, 0, 1]
+Step: 1 RCycle: 0 NPCycle: 0 #Par: 2 BFCandicate: 4 BestFound: 4
+[1, 0, 1]
+Step: 2 RCycle: 1 NPCycle: 0 #Par: 2 BFCandicate: 5 BestFound: 4
+[1, 1, 1]
+Step: 3 RCycle: 2 NPCycle: 0 #Par: 2 BFCandicate: 5 BestFound: 4
+[1, 1, 0]
+Step: 4 RCycle: 2 NPCycle: 0 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 0]
+Step: 5 RCycle: 3 NPCycle: 0 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 0]
+Step: 6 RCycle: 4 NPCycle: 0 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 7 RCycle: 4 NPCycle: 0 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 8 RCycle: 5 NPCycle: 0 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 9 RCycle: 0 NPCycle: 1 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 10 RCycle: 1 NPCycle: 1 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 11 RCycle: 1 NPCycle: 1 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 12 RCycle: 2 NPCycle: 1 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 13 RCycle: 2 NPCycle: 1 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 14 RCycle: 3 NPCycle: 1 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 15 RCycle: 3 NPCycle: 1 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 16 RCycle: 4 NPCycle: 1 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 17 RCycle: 4 NPCycle: 1 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 18 RCycle: 5 NPCycle: 1 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 1, 1]
+Step: 19 RCycle: 1 NPCycle: 2 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 20 RCycle: 1 NPCycle: 2 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 21 RCycle: 2 NPCycle: 2 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 22 RCycle: 2 NPCycle: 2 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 23 RCycle: 3 NPCycle: 2 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 24 RCycle: 3 NPCycle: 2 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 25 RCycle: 4 NPCycle: 2 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 26 RCycle: 4 NPCycle: 2 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 27 RCycle: 5 NPCycle: 2 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 0]
+Step: 28 RCycle: 1 NPCycle: 3 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 29 RCycle: 1 NPCycle: 3 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 30 RCycle: 2 NPCycle: 3 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 31 RCycle: 2 NPCycle: 3 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 32 RCycle: 3 NPCycle: 3 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 33 RCycle: 3 NPCycle: 3 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 34 RCycle: 4 NPCycle: 3 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 35 RCycle: 4 NPCycle: 3 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 36 RCycle: 5 NPCycle: 3 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 37 RCycle: 0 NPCycle: 4 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 38 RCycle: 1 NPCycle: 4 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 39 RCycle: 1 NPCycle: 4 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 40 RCycle: 2 NPCycle: 4 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 41 RCycle: 2 NPCycle: 4 #Par: 2 BFCandicate: 4 BestFound: 4
+[0, 1, 1]
+Step: 42 RCycle: 3 NPCycle: 4 #Par: 2 BFCandicate: 5 BestFound: 4
+[0, 0, 1]
+Step: 43 RCycle: 3 NPCycle: 4 #Par: 2 BFCandicate: 4 BestFound: 4
+[1, 0, 1]
+Step: 44 RCycle: 4 NPCycle: 4 #Par: 2 BFCandicate: 5 BestFound: 4
+[1, 1, 1]
+Step: 45 RCycle: 5 NPCycle: 4 #Par: 2 BFCandicate: 5 BestFound: 4
+[2, 1, 1]
+Step: 46 RCycle: 1 NPCycle: 0 #Par: 3 BFCandicate: 5 BestFound: 4
+[2, 2, 1]
+Step: 47 RCycle: 1 NPCycle: 0 #Par: 3 BFCandicate: 4 BestFound: 4
+[2, 2, 0]
+Step: 48 RCycle: 2 NPCycle: 0 #Par: 3 BFCandicate: 4 BestFound: 4
+[0, 2, 0]
+Step: 49 RCycle: 3 NPCycle: 0 #Par: 3 BFCandicate: 5 BestFound: 4
+[1, 2, 0]
+Step: 50 RCycle: 4 NPCycle: 0 #Par: 3 BFCandicate: 5 BestFound: 4
+[2, 2, 0]
+Step: 51 RCycle: 4 NPCycle: 0 #Par: 3 BFCandicate: 4 BestFound: 4
+[1, 2, 0]
+Step: 52 RCycle: 5 NPCycle: 0 #Par: 3 BFCandicate: 5 BestFound: 4
+[1, 1, 2]
+Step: 53 RCycle: 0 NPCycle: 1 #Par: 3 BFCandicate: 4 BestFound: 4
+[1, 1, 0]
+Step: 54 RCycle: 1 NPCycle: 1 #Par: 3 BFCandicate: 4 BestFound: 4
+[0, 1, 0]
+Step: 55 RCycle: 2 NPCycle: 1 #Par: 3 BFCandicate: 5 BestFound: 4
+[2, 1, 0]
+Step: 56 RCycle: 3 NPCycle: 1 #Par: 3 BFCandicate: 5 BestFound: 4
+[1, 1, 0]
+Step: 57 RCycle: 3 NPCycle: 1 #Par: 3 BFCandicate: 4 BestFound: 4
+[2, 1, 0]
+Step: 58 RCycle: 4 NPCycle: 1 #Par: 3 BFCandicate: 5 BestFound: 4
+[1, 1, 0]
+Step: 59 RCycle: 4 NPCycle: 1 #Par: 3 BFCandicate: 4 BestFound: 4
+[2, 1, 0]
+Step: 60 RCycle: 5 NPCycle: 1 #Par: 3 BFCandicate: 5 BestFound: 4
+[0, 0, 2]
+Step: 61 RCycle: 0 NPCycle: 2 #Par: 3 BFCandicate: 4 BestFound: 4
+[0, 0, 1]
+Step: 62 RCycle: 1 NPCycle: 2 #Par: 3 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 63 RCycle: 2 NPCycle: 2 #Par: 3 BFCandicate: 4 BestFound: 4
+[0, 0, 1]
+Step: 64 RCycle: 3 NPCycle: 2 #Par: 3 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 65 RCycle: 4 NPCycle: 2 #Par: 3 BFCandicate: 4 BestFound: 4
+[0, 0, 1]
+Step: 66 RCycle: 5 NPCycle: 2 #Par: 3 BFCandicate: 4 BestFound: 4
+[2, 1, 1]
+Step: 67 RCycle: 1 NPCycle: 3 #Par: 3 BFCandicate: 5 BestFound: 4
+[1, 1, 1]
+Step: 68 RCycle: 2 NPCycle: 3 #Par: 3 BFCandicate: 5 BestFound: 4
+[1, 1, 2]
+Step: 69 RCycle: 2 NPCycle: 3 #Par: 3 BFCandicate: 4 BestFound: 4
+[0, 1, 2]
+Step: 70 RCycle: 3 NPCycle: 3 #Par: 3 BFCandicate: 5 BestFound: 4
+[2, 1, 2]
+Step: 71 RCycle: 4 NPCycle: 3 #Par: 3 BFCandicate: 5 BestFound: 4
+[1, 1, 2]
+Step: 72 RCycle: 4 NPCycle: 3 #Par: 3 BFCandicate: 4 BestFound: 4
+[2, 1, 2]
+Step: 73 RCycle: 5 NPCycle: 3 #Par: 3 BFCandicate: 5 BestFound: 4
+[0, 0, 2]
+Step: 74 RCycle: 0 NPCycle: 4 #Par: 3 BFCandicate: 4 BestFound: 4
+[1, 0, 2]
+Step: 75 RCycle: 1 NPCycle: 4 #Par: 3 BFCandicate: 5 BestFound: 4
+[2, 0, 2]
+Step: 76 RCycle: 2 NPCycle: 4 #Par: 3 BFCandicate: 5 BestFound: 4
+[1, 0, 2]
+Step: 77 RCycle: 3 NPCycle: 4 #Par: 3 BFCandicate: 5 BestFound: 4
+[2, 0, 2]
+Step: 78 RCycle: 4 NPCycle: 4 #Par: 3 BFCandicate: 5 BestFound: 4
+[1, 0, 2]
+Step: 79 RCycle: 5 NPCycle: 4 #Par: 3 BFCandicate: 5 BestFound: 4
+[2, 1, 2]
+Step: 80 RCycle: 1 NPCycle: 0 #Par: 4 BFCandicate: 5 BestFound: 4
+[1, 1, 2]
+Step: 81 RCycle: 1 NPCycle: 0 #Par: 4 BFCandicate: 4 BestFound: 4
+[1, 1, 3]
+Step: 82 RCycle: 2 NPCycle: 0 #Par: 4 BFCandicate: 4 BestFound: 4
+[0, 1, 3]
+Step: 83 RCycle: 3 NPCycle: 0 #Par: 4 BFCandicate: 5 BestFound: 4
+[0, 0, 3]
+Step: 84 RCycle: 3 NPCycle: 0 #Par: 4 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 85 RCycle: 4 NPCycle: 0 #Par: 4 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 86 RCycle: 5 NPCycle: 0 #Par: 4 BFCandicate: 4 BestFound: 4
+[2, 1, 2]
+Step: 87 RCycle: 1 NPCycle: 1 #Par: 4 BFCandicate: 5 BestFound: 4
+[1, 1, 2]
+Step: 88 RCycle: 1 NPCycle: 1 #Par: 4 BFCandicate: 4 BestFound: 4
+[2, 1, 2]
+Step: 89 RCycle: 2 NPCycle: 1 #Par: 4 BFCandicate: 5 BestFound: 4
+[1, 1, 2]
+Step: 90 RCycle: 2 NPCycle: 1 #Par: 4 BFCandicate: 4 BestFound: 4
+[2, 1, 2]
+Step: 91 RCycle: 3 NPCycle: 1 #Par: 4 BFCandicate: 5 BestFound: 4
+[1, 1, 2]
+Step: 92 RCycle: 3 NPCycle: 1 #Par: 4 BFCandicate: 4 BestFound: 4
+[2, 1, 2]
+Step: 93 RCycle: 4 NPCycle: 1 #Par: 4 BFCandicate: 5 BestFound: 4
+[1, 1, 2]
+Step: 94 RCycle: 4 NPCycle: 1 #Par: 4 BFCandicate: 4 BestFound: 4
+[2, 1, 2]
+Step: 95 RCycle: 5 NPCycle: 1 #Par: 4 BFCandicate: 5 BestFound: 4
+[2, 1, 2]
+Step: 96 RCycle: 1 NPCycle: 2 #Par: 4 BFCandicate: 5 BestFound: 4
+[1, 1, 2]
+Step: 97 RCycle: 1 NPCycle: 2 #Par: 4 BFCandicate: 4 BestFound: 4
+[2, 1, 2]
+Step: 98 RCycle: 2 NPCycle: 2 #Par: 4 BFCandicate: 5 BestFound: 4
+[1, 1, 2]
+Step: 99 RCycle: 2 NPCycle: 2 #Par: 4 BFCandicate: 4 BestFound: 4
+[1, 1, 0]
+Step: 100 RCycle: 3 NPCycle: 2 #Par: 4 BFCandicate: 4 BestFound: 4
+[1, 1, 2]
+Step: 101 RCycle: 4 NPCycle: 2 #Par: 4 BFCandicate: 4 BestFound: 4
+[2, 1, 2]
+Step: 102 RCycle: 5 NPCycle: 2 #Par: 4 BFCandicate: 5 BestFound: 4
+[2, 1, 0]
+Step: 103 RCycle: 1 NPCycle: 3 #Par: 4 BFCandicate: 5 BestFound: 4
+[2, 2, 0]
+Step: 104 RCycle: 1 NPCycle: 3 #Par: 4 BFCandicate: 4 BestFound: 4
+[2, 2, 1]
+Step: 105 RCycle: 2 NPCycle: 3 #Par: 4 BFCandicate: 4 BestFound: 4
+[2, 2, 3]
+Step: 106 RCycle: 3 NPCycle: 3 #Par: 4 BFCandicate: 4 BestFound: 4
+[2, 2, 1]
+Step: 107 RCycle: 4 NPCycle: 3 #Par: 4 BFCandicate: 4 BestFound: 4
+[0, 2, 1]
+Step: 108 RCycle: 5 NPCycle: 3 #Par: 4 BFCandicate: 5 BestFound: 4
+[2, 1, 0]
+Step: 109 RCycle: 1 NPCycle: 4 #Par: 4 BFCandicate: 5 BestFound: 4
+[0, 1, 0]
+Step: 110 RCycle: 2 NPCycle: 4 #Par: 4 BFCandicate: 5 BestFound: 4
+[2, 1, 0]
+Step: 111 RCycle: 3 NPCycle: 4 #Par: 4 BFCandicate: 5 BestFound: 4
+[1, 1, 0]
+Step: 112 RCycle: 3 NPCycle: 4 #Par: 4 BFCandicate: 4 BestFound: 4
+[1, 1, 3]
+Step: 113 RCycle: 4 NPCycle: 4 #Par: 4 BFCandicate: 4 BestFound: 4
+[2, 1, 3]
+Step: 114 RCycle: 5 NPCycle: 4 #Par: 4 BFCandicate: 5 BestFound: 4
+[0, 0, 3]
+Step: 115 RCycle: 0 NPCycle: 0 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 1]
+Step: 116 RCycle: 1 NPCycle: 0 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 117 RCycle: 2 NPCycle: 0 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 118 RCycle: 3 NPCycle: 0 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 119 RCycle: 4 NPCycle: 0 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 120 RCycle: 5 NPCycle: 0 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 121 RCycle: 1 NPCycle: 1 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 122 RCycle: 2 NPCycle: 1 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 123 RCycle: 3 NPCycle: 1 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 124 RCycle: 4 NPCycle: 1 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 125 RCycle: 5 NPCycle: 1 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 126 RCycle: 1 NPCycle: 2 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 127 RCycle: 2 NPCycle: 2 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 128 RCycle: 3 NPCycle: 2 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 129 RCycle: 4 NPCycle: 2 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 130 RCycle: 5 NPCycle: 2 #Par: 5 BFCandicate: 4 BestFound: 4
+[2, 1, 2]
+Step: 131 RCycle: 1 NPCycle: 3 #Par: 5 BFCandicate: 5 BestFound: 4
+[0, 1, 2]
+Step: 132 RCycle: 2 NPCycle: 3 #Par: 5 BFCandicate: 5 BestFound: 4
+[2, 1, 2]
+Step: 133 RCycle: 3 NPCycle: 3 #Par: 5 BFCandicate: 5 BestFound: 4
+[1, 1, 2]
+Step: 134 RCycle: 3 NPCycle: 3 #Par: 5 BFCandicate: 4 BestFound: 4
+[1, 1, 4]
+Step: 135 RCycle: 4 NPCycle: 3 #Par: 5 BFCandicate: 4 BestFound: 4
+[1, 1, 3]
+Step: 136 RCycle: 5 NPCycle: 3 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 137 RCycle: 1 NPCycle: 4 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 138 RCycle: 2 NPCycle: 4 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 139 RCycle: 3 NPCycle: 4 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 140 RCycle: 4 NPCycle: 4 #Par: 5 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 141 RCycle: 5 NPCycle: 4 #Par: 5 BFCandicate: 4 BestFound: 4
+[2, 1, 0]
+Step: 142 RCycle: 1 NPCycle: 0 #Par: 6 BFCandicate: 5 BestFound: 4
+[1, 1, 0]
+Step: 143 RCycle: 1 NPCycle: 0 #Par: 6 BFCandicate: 4 BestFound: 4
+[1, 1, 3]
+Step: 144 RCycle: 2 NPCycle: 0 #Par: 6 BFCandicate: 4 BestFound: 4
+[1, 1, 4]
+Step: 145 RCycle: 3 NPCycle: 0 #Par: 6 BFCandicate: 4 BestFound: 4
+[1, 1, 3]
+Step: 146 RCycle: 4 NPCycle: 0 #Par: 6 BFCandicate: 4 BestFound: 4
+[1, 1, 4]
+Step: 147 RCycle: 5 NPCycle: 0 #Par: 6 BFCandicate: 4 BestFound: 4
+[1, 1, 1]
+Step: 148 RCycle: 1 NPCycle: 1 #Par: 6 BFCandicate: 5 BestFound: 4
+[1, 1, 2]
+Step: 149 RCycle: 1 NPCycle: 1 #Par: 6 BFCandicate: 4 BestFound: 4
+[1, 1, 4]
+Step: 150 RCycle: 2 NPCycle: 1 #Par: 6 BFCandicate: 4 BestFound: 4
+[1, 1, 3]
+Step: 151 RCycle: 3 NPCycle: 1 #Par: 6 BFCandicate: 4 BestFound: 4
+[1, 1, 4]
+Step: 152 RCycle: 4 NPCycle: 1 #Par: 6 BFCandicate: 4 BestFound: 4
+[1, 1, 3]
+Step: 153 RCycle: 5 NPCycle: 1 #Par: 6 BFCandicate: 4 BestFound: 4
+[2, 1, 0]
+Step: 154 RCycle: 1 NPCycle: 2 #Par: 6 BFCandicate: 5 BestFound: 4
+[2, 2, 0]
+Step: 155 RCycle: 1 NPCycle: 2 #Par: 6 BFCandicate: 4 BestFound: 4
+[2, 2, 1]
+Step: 156 RCycle: 2 NPCycle: 2 #Par: 6 BFCandicate: 4 BestFound: 4
+[2, 2, 3]
+Step: 157 RCycle: 3 NPCycle: 2 #Par: 6 BFCandicate: 4 BestFound: 4
+[2, 2, 1]
+Step: 158 RCycle: 4 NPCycle: 2 #Par: 6 BFCandicate: 4 BestFound: 4
+[2, 2, 4]
+Step: 159 RCycle: 5 NPCycle: 2 #Par: 6 BFCandicate: 4 BestFound: 4
+[2, 1, 0]
+Step: 160 RCycle: 1 NPCycle: 3 #Par: 6 BFCandicate: 5 BestFound: 4
+[0, 1, 0]
+Step: 161 RCycle: 2 NPCycle: 3 #Par: 6 BFCandicate: 5 BestFound: 4
+[2, 1, 0]
+Step: 162 RCycle: 3 NPCycle: 3 #Par: 6 BFCandicate: 5 BestFound: 4
+[1, 1, 0]
+Step: 163 RCycle: 3 NPCycle: 3 #Par: 6 BFCandicate: 4 BestFound: 4
+[1, 1, 2]
+Step: 164 RCycle: 4 NPCycle: 3 #Par: 6 BFCandicate: 4 BestFound: 4
+[1, 1, 4]
+Step: 165 RCycle: 5 NPCycle: 3 #Par: 6 BFCandicate: 4 BestFound: 4
+[0, 0, 1]
+Step: 166 RCycle: 1 NPCycle: 4 #Par: 6 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 167 RCycle: 2 NPCycle: 4 #Par: 6 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 168 RCycle: 3 NPCycle: 4 #Par: 6 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 169 RCycle: 4 NPCycle: 4 #Par: 6 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 170 RCycle: 5 NPCycle: 4 #Par: 6 BFCandicate: 4 BestFound: 4
+[2, 1, 2]
+Step: 171 RCycle: 1 NPCycle: 0 #Par: 7 BFCandicate: 5 BestFound: 4
+[1, 1, 2]
+Step: 172 RCycle: 1 NPCycle: 0 #Par: 7 BFCandicate: 4 BestFound: 4
+[1, 1, 4]
+Step: 173 RCycle: 2 NPCycle: 0 #Par: 7 BFCandicate: 4 BestFound: 4
+[1, 1, 3]
+Step: 174 RCycle: 3 NPCycle: 0 #Par: 7 BFCandicate: 4 BestFound: 4
+[1, 1, 4]
+Step: 175 RCycle: 4 NPCycle: 0 #Par: 7 BFCandicate: 4 BestFound: 4
+[1, 1, 3]
+Step: 176 RCycle: 5 NPCycle: 0 #Par: 7 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 177 RCycle: 1 NPCycle: 1 #Par: 7 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 178 RCycle: 2 NPCycle: 1 #Par: 7 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 179 RCycle: 3 NPCycle: 1 #Par: 7 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 180 RCycle: 4 NPCycle: 1 #Par: 7 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 181 RCycle: 5 NPCycle: 1 #Par: 7 BFCandicate: 4 BestFound: 4
+[2, 1, 1]
+Step: 182 RCycle: 1 NPCycle: 2 #Par: 7 BFCandicate: 5 BestFound: 4
+[0, 1, 1]
+Step: 183 RCycle: 2 NPCycle: 2 #Par: 7 BFCandicate: 5 BestFound: 4
+[2, 1, 1]
+Step: 184 RCycle: 3 NPCycle: 2 #Par: 7 BFCandicate: 5 BestFound: 4
+[1, 1, 1]
+Step: 185 RCycle: 4 NPCycle: 2 #Par: 7 BFCandicate: 5 BestFound: 4
+[1, 1, 2]
+Step: 186 RCycle: 4 NPCycle: 2 #Par: 7 BFCandicate: 4 BestFound: 4
+[1, 1, 4]
+Step: 187 RCycle: 5 NPCycle: 2 #Par: 7 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 188 RCycle: 1 NPCycle: 3 #Par: 7 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 189 RCycle: 2 NPCycle: 3 #Par: 7 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 190 RCycle: 3 NPCycle: 3 #Par: 7 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 191 RCycle: 4 NPCycle: 3 #Par: 7 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 192 RCycle: 5 NPCycle: 3 #Par: 7 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 193 RCycle: 1 NPCycle: 4 #Par: 7 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 194 RCycle: 2 NPCycle: 4 #Par: 7 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 195 RCycle: 3 NPCycle: 4 #Par: 7 BFCandicate: 4 BestFound: 4
+[0, 0, 3]
+Step: 196 RCycle: 4 NPCycle: 4 #Par: 7 BFCandicate: 4 BestFound: 4
+[0, 0, 2]
+Step: 197 RCycle: 5 NPCycle: 4 #Par: 7 BFCandicate: 4 BestFound: 4
+[2, 1, 0]
+Step: 198 RCycle: 1 NPCycle: 0 #Par: 8 BFCandicate: 5 BestFound: 4
+[1, 1, 0]
+Step: 199 RCycle: 1 NPCycle: 0 #Par: 8 BFCandicate: 4 BestFound: 4
+[1, 1, 2]
+Step: 200 RCycle: 2 NPCycle: 0 #Par: 8 BFCandicate: 4 BestFound: 4
+
+
+Final Error-bound expression: (9.99200722162641e-16*t5 + 9.99200722162641e-16*t6)
++(3.33066907387547e-16*t0)
++(0)
++(0)
++(0)
++(0)
++(0)
++(0)
+
+Number of operations: 6
+Calculation steps: 
+t0=fabs(t0)
+t6=fabs(t6)
+tem0=t5 + t6
+tem1=9.99200722162641e-16*tem0
+tem2=3.33066907387547e-16*t0
+tem3=tem1 + tem2

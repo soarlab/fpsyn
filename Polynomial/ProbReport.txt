@@ -1,0 +1,5 @@
+In error IA: 0
+In error FPSyn: 0
+In error Both: 0
+In error FPSyn not IA: 0
+In error IA not FPSyn: 0

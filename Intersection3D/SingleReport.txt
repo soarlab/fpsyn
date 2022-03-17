@@ -1,0 +1,2 @@
+Average FPS time : 0.000161
+Average IA time : 0.000443

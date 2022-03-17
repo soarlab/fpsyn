@@ -1,0 +1,5 @@
+In error IA: 204
+In error FPSyn: 198
+In error Both: 197
+In error FPSyn not IA: 1
+In error IA not FPSyn: 7

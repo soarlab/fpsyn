@@ -1,0 +1,3 @@
+Average FPS time : 0.000027
+Average Manual time : 0.000020
+Average IA time : 0.000082

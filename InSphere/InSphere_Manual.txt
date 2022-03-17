@@ -1,0 +1,100 @@
+void Manual_InSphere(REAL ax, REAL ay,REAL az,REAL bx,REAL by,REAL bz,REAL cx,REAL cy,REAL cz,REAL dx,REAL dy,REAL dz,REAL ex,REAL ey,REAL ez, REAL* result, REAL* errbound){
+
+  REAL aex, bex, cex, dex;
+  REAL aey, bey, cey, dey;
+  REAL aez, bez, cez, dez;
+  REAL aexbey, bexaey, bexcey, cexbey, cexdey, dexcey, dexaey, aexdey;
+  REAL aexcey, cexaey, bexdey, dexbey;
+  REAL alift, blift, clift, dlift;
+  REAL ab, bc, cd, da, ac, bd;
+  REAL abc, bcd, cda, dab;
+  REAL aezplus, bezplus, cezplus, dezplus;
+  REAL aexbeyplus, bexaeyplus, bexceyplus, cexbeyplus;
+  REAL cexdeyplus, dexceyplus, dexaeyplus, aexdeyplus;
+  REAL aexceyplus, cexaeyplus, bexdeyplus, dexbeyplus;
+  REAL det;
+  REAL permanent;
+
+  aex = ax - ex;
+  bex = bx - ex;
+  cex = cx - ex;
+  dex = dx - ex;
+  
+  aey = ay - ey;
+  bey = by - ey;
+  cey = cy - ey;
+  dey = dy - ey;
+  
+  aez = az - ez;
+  bez = bz - ez;
+  cez = cz - ez;
+  dez = dz - ez;
+
+
+  aexbey = aex * bey;
+  bexaey = bex * aey;
+  ab = aexbey - bexaey;
+  bexcey = bex * cey;
+  cexbey = cex * bey;
+  bc = bexcey - cexbey;
+  cexdey = cex * dey;
+  dexcey = dex * cey;
+  cd = cexdey - dexcey;
+  dexaey = dex * aey;
+  aexdey = aex * dey;
+  da = dexaey - aexdey;
+
+  aexcey = aex * cey;
+  cexaey = cex * aey;
+  ac = aexcey - cexaey;
+  bexdey = bex * dey;
+  dexbey = dex * bey;
+  bd = bexdey - dexbey;
+
+  abc = aez * bc - bez * ac + cez * ab;
+  bcd = bez * cd - cez * bd + dez * bc;
+  cda = cez * da + dez * ac + aez * cd;
+  dab = dez * ab + aez * bd + bez * da;
+
+  alift = aex * aex + aey * aey + aez * aez;
+  blift = bex * bex + bey * bey + bez * bez;
+  clift = cex * cex + cey * cey + cez * cez;
+  dlift = dex * dex + dey * dey + dez * dez;
+
+  det = (dlift * abc - clift * dab) + (blift * cda - alift * bcd);
+
+  aezplus = fabs(aez);
+  bezplus = fabs(bez);
+  cezplus = fabs(cez);
+  dezplus = fabs(dez);
+  aexbeyplus = fabs(aexbey);
+  bexaeyplus = fabs(bexaey);
+  bexceyplus = fabs(bexcey);
+  cexbeyplus = fabs(cexbey);
+  cexdeyplus = fabs(cexdey);
+  dexceyplus = fabs(dexcey);
+  dexaeyplus = fabs(dexaey);
+  aexdeyplus = fabs(aexdey);
+  aexceyplus = fabs(aexcey);
+  cexaeyplus = fabs(cexaey);
+  bexdeyplus = fabs(bexdey);
+  dexbeyplus = fabs(dexbey);
+  permanent = ((cexdeyplus + dexceyplus) * bezplus
+               + (dexbeyplus + bexdeyplus) * cezplus
+               + (bexceyplus + cexbeyplus) * dezplus)
+            * alift
+            + ((dexaeyplus + aexdeyplus) * cezplus
+               + (aexceyplus + cexaeyplus) * dezplus
+               + (cexdeyplus + dexceyplus) * aezplus)
+            * blift
+            + ((aexbeyplus + bexaeyplus) * dezplus
+               + (bexdeyplus + dexbeyplus) * aezplus
+               + (dexaeyplus + aexdeyplus) * bezplus)
+            * clift
+            + ((bexceyplus + cexbeyplus) * aezplus
+               + (cexaeyplus + aexceyplus) * bezplus
+               + (aexbeyplus + bexaeyplus) * cezplus)
+            * dlift;
+  *errbound = 1.7763568394002532e-15 * permanent;
+  *result = det	;
+}

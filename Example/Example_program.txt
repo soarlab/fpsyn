@@ -1,0 +1,21 @@
+void FPSyn_Example(REAL a,REAL b,REAL c,REAL d,REAL* result, REAL* error_bound){
+//Calculation steps for input: ;
+REAL t0=c*d;
+REAL t1=a*a;
+REAL t2=t1*t1;
+REAL t3=t1*t2;
+REAL t4=b*b;
+REAL t5=t3+t4;
+REAL t6=t0*t5;
+REAL t7=t0+t5;
+REAL t8=t6+t7;
+//Calculation steps for Error-bound: ;
+t0=fabs(t0);
+t6=fabs(t6);
+REAL tem0=t5+t6;
+REAL tem1=9.99200722162641e-16*tem0;
+REAL tem2=3.33066907387547e-16*t0;
+REAL tem3=tem1+tem2;
+*result=t8;
+*error_bound=1.0000000001*tem3;
+}

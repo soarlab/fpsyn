@@ -1,0 +1,54 @@
+int main(){
+int sample=10000;
+int numtest=100;
+FILE *save;
+save=fopen("RuntestSave.txt","w");
+FILE *report;
+report=fopen("RuntestReport.txt","w");
+REAL range=1000000;
+REAL varlist;
+REAL res, err,herr,lerr;
+REAL FPStotaltime=0; 
+REAL IAtotaltime=0;
+REAL FPStime=0; 
+REAL IAtime=0;
+clock_t before, after;
+int i,j;
+for(j=0; j<sample; j++){
+FPStime=0;
+IAtime=0;
+
+
+varlist=randfl(range);
+
+before = clock();
+FPSynx10;
+after = clock();
+FPStime = ((double)(after - before))/CLOCKS_PER_SEC;
+FPStotaltime = FPStotaltime + FPStime;
+
+
+before = clock();
+IAx10;
+after = clock();
+IAtime = ((double)(after - before))/CLOCKS_PER_SEC;
+IAtotaltime = IAtotaltime + IAtime;
+
+
+printf("Total time FPS: %e \n", FPStime);
+printf("Total time IA: %e \n\n", IAtime);
+
+fprintf(save,"%e\n",FPStime);
+fprintf(save,"%e\n",IAtime);
+}
+
+printf("Average FPS time : %f\n",FPStotaltime/sample);
+printf("Average IA time :%f\n",IAtotaltime/sample);
+
+
+fprintf(report,"Average FPS time : %f\n",FPStotaltime/sample);
+fprintf(report,"Average IA time : %f\n",IAtotaltime/sample);
+
+fclose(save);
+fclose(report);
+}

@@ -1,0 +1,51 @@
+
+//Calculation steps for input: 
+t0=-x4
+t1=t0 + x3
+t2=-x2
+t3=t2 + x1
+t4=x1*y2
+t5=t2*y1
+t6=t4 + t5
+t7=t1*t6
+t8=x3*y4
+t9=t0*y3
+t10=t8 + t9
+t11=t10*t3
+t13=-t11 + t7
+t15=-y4 + y3
+t16=t15*t3
+t18=-y2 + y1
+t19=t1*t18
+t21=t16 + -t19
+t22=div(t13, t21)
+
+//Calculation steps for Error-bound: 
+t1=fabs(t1)
+t9=fabs(t9)
+t11=fabs(t11)
+t8=fabs(t8)
+t3=fabs(t3)
+t4=fabs(t4)
+t5=fabs(t5)
+t7=fabs(t7)
+t16=fabs(t16)
+t19=fabs(t19)
+t13=fabs(t13)
+t21=fabs(t21)
+temp0=t4 + t5
+temp1=t1*temp0
+temp2=t8 + t9
+temp3=t3*temp2
+temp4=temp1 + temp3
+temp5=5.55111512312578e-16*temp4
+temp6=t16 + t19
+temp7=4.44089209850063e-16*temp6
+
+*result =t22
+t22=fabs(t22)
+A = (t13*temp7 + t21*temp5)*1.0000000001
+B = (t21-1.0000000001*temp7)*0.9999999999999998
+E = (A/t21*1.0000000000000002/B*1.0000000000000002+t22*1.1102230246251565e-16*1.0000000000000002)*1.0000000000000002
+
+*error_bound = t21<=temp7? 1/0:divE

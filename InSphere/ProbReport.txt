@@ -1,0 +1,9 @@
+In error IA: 3918
+In error Manual: 4028
+In error FPSyn: 3854
+In error IA & FPSyn: 3810
+In error FPSyn not IA: 44
+In error IA not FPSyn: 108
+In error Manual & FPSyn: 3854
+In error FPSyn not Manual: 0
+In error Manual not FPSyn: 174
