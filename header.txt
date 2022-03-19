@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+#include <fenv.h>
+#include <gmp.h>
+#include <mpfr.h>
+
+#define REAL double
+
+#define max(a,b) \
+   ({ __typeof__ (a) _a = (a); \
+       __typeof__ (b) _b = (b); \
+     _a > _b ? _a : _b; })
+
+#define min(a,b) \
+   ({ __typeof__ (a) _a = (a); \
+       __typeof__ (b) _b = (b); \
+     _a < _b ? _a : _b; })
+
+#define Absolute(a)  ((a) >= 0.0 ? (a) : -(a))
+
+REAL randfl_uniReal(a)
+REAL a;
+{
+    return (REAL)rand()/((REAL)RAND_MAX/a);
+}
+
+REAL randfl(a)
+int a;
+{
+    int r = (rand() % a)-(a/2);
+	REAL t = (REAL)rand()/((REAL)RAND_MAX);
+    return (t - (1/2))*pow(2,r);
+}

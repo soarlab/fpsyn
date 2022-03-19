@@ -1,0 +1,39 @@
+void Manual_InCircle(REAL ax,REAL ay,REAL bx,REAL by,REAL cx,REAL cy,REAL dx,REAL dy,REAL* result, REAL* error_bound){
+//Calculation steps for input: ;
+ REAL adx, bdx, cdx, ady, bdy, cdy;
+ REAL bdxcdy, cdxbdy, cdxady, adxcdy, adxbdy, bdxady;
+ REAL alift, blift, clift;
+ REAL det;
+ REAL permanent;
+
+ adx = ax - dx;
+ bdx = bx - dx;
+ cdx = cx - dx;
+ ady = ay - dy;
+ bdy = by - dy;
+ cdy = cy - dy;
+
+  bdxcdy = bdx * cdy;
+  cdxbdy = cdx * bdy;
+  alift = adx * adx + ady * ady;
+
+  cdxady = cdx * ady;
+  adxcdy = adx * cdy;
+  blift = bdx * bdx + bdy * bdy;
+
+  adxbdy = adx * bdy;
+  bdxady = bdx * ady;
+  clift = cdx * cdx + cdy * cdy;
+
+  det = alift * (bdxcdy - cdxbdy)
+      + blift * (cdxady - adxcdy)
+      + clift * (adxbdy - bdxady);
+
+  permanent = (Absolute(bdxcdy) + Absolute(cdxbdy)) * alift
+            + (Absolute(cdxady) + Absolute(adxcdy)) * blift
+            + (Absolute(adxbdy) + Absolute(bdxady)) * clift;
+*result=det;
+*error_bound = 1.1102230246251577e-15 * permanent;
+
+
+}

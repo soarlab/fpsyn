@@ -1,0 +1,21 @@
+void FPSyn_Polynomial(REAL x,REAL* result, REAL* error_bound){
+REAL t0 = x*x;
+REAL t1 = 0.5*t0;
+REAL t2 = t0*t0;
+REAL t3 = t0*t2;
+REAL t4 = 0.00138888888888889*t3;
+REAL t5 = t2*t2;
+REAL t7 = 2.75573192239859e-6*(t5*x);
+REAL t9 = 0.00833333333333333*(t2*x);
+REAL t11 = 2.75573192239859e-7*(t0*t5);
+REAL t12 = 0.0416666666666667*t2;
+REAL t14 = 0.166666666666667*(t0*x);
+REAL t15 = 2.48015873015873e-5*t5;
+REAL t17 = 0.000198412698412698*(t3*x);
+REAL t21 = t14+(t12+(t11+(t1+1)));
+REAL t23 = t17+(t15+t21);
+REAL t25 = (t23+t4)+t7;
+REAL t27 = (t25+t9)+x;
+*result = t27;
+*error_bound = 1.0000000001*((1.33226762955019e-15*((Absolute(t7))+(t4+((Absolute(t17))+(t11+t15)))))+(6.66133814775094e-16*((Absolute(t9))+((Absolute(t27))+((Absolute(t25))+((Absolute(t23))+((Absolute(t21))+((Absolute(t14))+(t1+t12)))))))));
+}

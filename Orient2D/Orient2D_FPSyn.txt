@@ -1,0 +1,6 @@
+void FPSyn_Orient2D(REAL ax,REAL ay,REAL bx,REAL by,REAL cx,REAL cy,REAL* result, REAL* error_bound){
+REAL t4 = (ax-cx)*(by-cy);
+REAL t7 = (ay-cy)*(bx-cx);
+*result = (t4-t7);
+*error_bound = 1.0000000001*(4.44089209850063e-16*((Absolute(t4))+(Absolute(t7))));
+}

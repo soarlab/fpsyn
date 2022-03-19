@@ -1,0 +1,12 @@
+void Manual_Orient2D(REAL ax,REAL ay,REAL bx,REAL by,REAL cx,REAL cy,REAL* result, REAL* error_bound){
+  REAL detleft, detright, det;
+  REAL detsum;
+
+  detleft = (ax - cx) * (by - cy);
+  detright = (ay - cy) * (bx - cx);
+  det = detleft - detright;
+  detsum = Absolute(detleft) + Absolute(detright);
+
+*result=det;
+*error_bound=3.3306690738754716e-16*detsum;
+}

@@ -1,0 +1,38 @@
+void Manual_Orient3D(REAL ax,REAL ay,REAL az,REAL bx,REAL by,REAL bz,REAL cx,REAL cy,REAL cz,REAL dx,REAL dy,REAL dz,REAL* result, REAL* error_bound){
+
+  REAL adx, bdx, cdx, ady, bdy, cdy, adz, bdz, cdz;
+  REAL bdxcdy, cdxbdy, cdxady, adxcdy, adxbdy, bdxady;
+  REAL det;
+  REAL permanent;
+
+  adx = ax - dx;
+  bdx = bx - dx;
+  cdx = cx - dx;
+  ady = ay - dy;
+  bdy = by - dy;
+  cdy = cy - dy;
+  adz = az - dz;
+  bdz = bz - dz;
+  cdz = cz - dz;
+
+  bdxcdy = bdx * cdy;
+  cdxbdy = cdx * bdy;
+
+  cdxady = cdx * ady;
+  adxcdy = adx * cdy;
+
+  adxbdy = adx * bdy;
+  bdxady = bdx * ady;
+
+  det = adz * (bdxcdy - cdxbdy)
+      + bdz * (cdxady - adxcdy)
+      + cdz * (adxbdy - bdxady);
+
+  permanent = (Absolute(bdxcdy) + Absolute(cdxbdy)) * Absolute(adz)
+            + (Absolute(cdxady) + Absolute(adxcdy)) * Absolute(bdz)
+            + (Absolute(adxbdy) + Absolute(bdxady)) * Absolute(cdz);
+
+*result=det;
+*error_bound = 7.771561172376103e-16 * permanent;
+
+}

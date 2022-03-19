@@ -1,0 +1,20 @@
+void FPSyn_InCircle(REAL ax,REAL ay,REAL bx,REAL by,REAL cx,REAL cy,REAL dx,REAL dy,REAL* result, REAL* error_bound){
+REAL t1 = cx-dx;
+REAL t3 = cy-dy;
+REAL t4 = ax-dx;
+REAL t5 = by-dy;
+REAL t6 = ay-dy;
+REAL t7 = bx-dx;
+REAL t10 = (t1*t1)+(t3*t3);
+REAL t11 = t4*t5;
+REAL t12 = t6*t7;
+REAL t18 = (t4*t4)+(t6*t6);
+REAL t19 = t3*t7;
+REAL t20 = t1*t5;
+REAL t26 = (t5*t5)+(t7*t7);
+REAL t27 = t3*t4;
+REAL t28 = t1*t6;
+REAL t34 = ((t10*(t11-t12))+(t18*(t19-t20)))-(t26*(t27-t28));
+*result = t34;
+*error_bound = 1.0000000001*((1.11022302462516e-15*((t26*((Absolute(t27))+(Absolute(t28))))+((t10*((Absolute(t11))+(Absolute(t12))))+(t18*((Absolute(t19))+(Absolute(t20)))))))+(1.11022302462516e-16*(Absolute(t34))));
+}

@@ -1,0 +1,58 @@
+
+int main(){
+int range=100;
+int sample=100000;
+REAL varlist;
+REAL res, err, herr,lerr;
+FILE *fsave;
+opensave
+FILE *freport;
+openreport
+int cIA=0;
+int cFPS=0;
+int cM=0;
+int cBoth=0;
+int cIAnFPS=0;
+int cFPSnIA=0;
+int bIA, bFPS;
+int i;
+for(i=0; i<sample; i++)
+{
+
+varlist=randfl(range);
+
+
+FPSynFunc;
+IAFunc;
+
+printf("%e      %e         %e         %f\n ", res, herr-lerr, err, (herr-lerr)/2/err);
+fprintf(fsave, "%e      %e      %e      %e      %e         %f\n ", res, err, herr, lerr,herr-lerr, (herr-lerr)/2/err);
+
+if ((0<herr)&&(0>lerr)){bIA=1;}
+else { bIA=0;}
+
+if ((res<err)&&(res>-err)){bFPS=1;}
+else { bFPS=0;}
+
+cBoth = cBoth+bIA*bFPS;
+cIA = cIA + bIA;
+cFPS = cFPS+ bFPS;
+if ((bIA==1)&&(bFPS==0)) {cIAnFPS=cIAnFPS+1;}
+if ((bIA==0)&&(bFPS==1)) {cFPSnIA=cFPSnIA+1;}
+
+}
+
+fclose(fsave);
+
+printf("In error IA: %d\n", cIA);
+printf("In error FPSyn: %d\n", cFPS);
+printf("In error Both: %d\n", cBoth);
+
+fprintf(freport,"In error IA: %d\n", cIA);
+fprintf(freport,"In error FPSyn: %d\n", cFPS);
+fprintf(freport,"In error Both: %d\n", cBoth);
+fprintf(freport,"In error FPSyn not IA: %d\n", cFPSnIA);
+fprintf(freport,"In error IA not FPSyn: %d\n", cIAnFPS);
+fclose(freport);
+
+}

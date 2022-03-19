@@ -1,0 +1,9 @@
+In error IA: 7164
+In error Manual: 7219
+In error FPSyn: 7043
+In error IA & FPSyn: 7013
+In error FPSyn not IA: 30
+In error IA not FPSyn: 151
+In error Manual & FPSyn: 7036
+In error FPSyn not Manual: 7
+In error Manual not FPSyn: 183
