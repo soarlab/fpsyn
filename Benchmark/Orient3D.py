@@ -21,6 +21,6 @@ orient3D=orient3Da+orient3Db+orient3Dc
 ##Running---------------------------###
 
 
-p=orient3D
-p=FPS.FPSynthesis(p,"Orient3D")
+exp=orient3D
+errexp=FPS.FPSynthesis(exp,"Orient3D")
 

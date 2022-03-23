@@ -1,0 +1,26 @@
+void FPSyn_Intersection2D(REAL x1,REAL x2,REAL x3,REAL x4,REAL y1,REAL y2,REAL y3,REAL y4,REAL* result, REAL* error_bound){
+REAL t0 = 0-x4;
+REAL t1 = t0+x3;
+REAL t2 = 0-x2;
+REAL t3 = t2+x1;
+REAL t4 = x1*y2;
+REAL t5 = t2*y1;
+REAL t7 = t1*(t4+t5);
+REAL t8 = x3*y4;
+REAL t9 = t0*y3;
+REAL t11 = (t8+t9)*t3;
+REAL t16 = (y3-y4)*t3;
+REAL t19 = t1*(y1-y2);
+REAL t21 = t16-t19;
+REAL t22 = (t7-t11)/t21;
+REAL t11f = Absolute(t11);
+REAL t7f = Absolute(t7);
+REAL t21f = Absolute(t21);
+REAL temp5 = 5.55111512312578e-16*(((Absolute(t1))*((Absolute(t4))+(Absolute(t5))))+((Absolute(t3))*((Absolute(t8))+(Absolute(t9)))));
+REAL temp7 = 4.44089209850063e-16*((Absolute(t16))+(Absolute(t19)));
+*result = t22;
+REAL A = (t13f*temp7+t21f*temp5)*1.0000000001;
+REAL B = (t21f-1.0000000001*temp7)*0.9999999999999998;
+REAL E = (A/t21f*1.0000000000000002/B*1.0000000000000002+(Absolute(t22))*1.1102230246251565e-16*1.0000000000000002)*1.0000000000000002;
+*error_bound = t21<=temp7?1/0:E;
+}

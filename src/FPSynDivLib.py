@@ -18,7 +18,7 @@ import copy
 import math
 # -*- coding: utf-8 -*-
 
-
+import InterReduceDiv as IR
 from sympy import *
 import itertools
 import random
@@ -1588,7 +1588,7 @@ def FPSynthesisDiv(num,den,funcname):
     file.write('\nNumerator calculation steps: \n')
     prtlist(asg)
     writeassignmentfile(asg,file)
-
+    numerr = errexp
     numerasg=tabuassign
 
     print('\nDenominator double substitution:')
@@ -1632,6 +1632,7 @@ def FPSynthesisDiv(num,den,funcname):
     prtlist(asg)
     writeassignmentfile(asg,file)
     file.close()
+    denerr = errexp
     denomasg=tabuassign
     
     asg,numop,  numerrvar, denerrvar=combineasg(numerr, denerr, numerasg, denomasg, inter,numer,denom)
@@ -1672,6 +1673,7 @@ def FPSynthesisDiv(num,den,funcname):
     writecode(codelines,outfile)
     outfile.write("}\n")
     outfile.close()
+    IR.reduceinter(funcname)
     return errexp
 
 def diverr(res,num,den,numerr,denerr,epval):

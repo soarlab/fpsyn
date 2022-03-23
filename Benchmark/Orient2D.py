@@ -19,5 +19,5 @@ orient2D=(ax-cx)*(by-cy)-(bx-cx)*(ay-cy)
 
 
 exp=orient2D
-errorexp=FPS.FPSynthesis(p,"Orient2D")
+errorexp=FPS.FPSynthesis(exp,"Orient2D")
 
